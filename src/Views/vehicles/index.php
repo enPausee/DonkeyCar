@@ -1,1 +1,1 @@
-<p>Page d'accueil des vehicules</p>
+<p>Liste des vehicules</p>

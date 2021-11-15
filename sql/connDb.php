@@ -1,8 +1,5 @@
 <?php
-const DB_HOST = 'localhost';
-const DB_NAME = 'donkey_car_db';
-const DB_USER = 'root';
-const DB_PSWD = '';
+ require_once dirname(__DIR__). '/src/Core/_connect.php';
 
 $options = [
     PDO::MYSQL_ATTR_INIT_COMMAND    => 'SET NAMES utf8',
