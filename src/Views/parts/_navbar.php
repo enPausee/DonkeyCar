@@ -13,7 +13,13 @@
                     <a class="nav-link" href="/brand">Liste des marques</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/category">Liste des catégories</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/model">Liste des models</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/login">Login</a>
                 </li>
             </ul>
         </div>
