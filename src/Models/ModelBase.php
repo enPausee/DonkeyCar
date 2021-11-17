@@ -5,11 +5,8 @@ use App\Core\Db;
 
 class ModelBase extends Db
 {
-    // Table de la BDD
     protected $table;
 
-
-    // Instance de la BD
     private $db;
 
     public function findAll() 
@@ -23,7 +20,7 @@ class ModelBase extends Db
         $champs = [];
         $valeurs = [];
 
-        // On boucle pour éclater le tableau
+        // We loop to explode the table
         foreach ($criteria as $champ => $valeur) {
             $champs[] = "$champ = ?";
             $valeurs[] = $valeur;
@@ -38,14 +35,14 @@ class ModelBase extends Db
         return $this->myQuery("SELECT * FROM  {$this->table}  WHERE id = $id")->fetch();
     }
 
-    public function create(Model $model)
+    public function create()
     {
         $champs = [];
         $interrogations = [];
         $valeurs = [];
 
-        // On boucle pour éclater le tableau
-        foreach ($model as $champ => $valeur) {
+        // We loop to explode the table
+        foreach ($this as $champ => $valeur) {
             if( $valeur !== null && $champ != 'db' && $champ != 'table') {
                 $champs[] = $champ;
                 $interrogations[] = "?";
@@ -59,7 +56,7 @@ class ModelBase extends Db
         return Db::getInstance()->lastInsertId();
     }
 
-    public function hydrate(array $datas) {
+    public function hydrate($datas) {
         foreach ($datas as $key => $value) {
             $setter = 'set' . ucfirst($key);
 
@@ -70,19 +67,19 @@ class ModelBase extends Db
         return $this;
     }
 
-    public function update(int $id, Model $model)
+    public function update()
     {
         $champs = [];
         $valeurs = [];
 
-        // On boucle pour éclater le tableau
-        foreach ($model as $champ => $valeur) {
+        // We loop to explode the table
+        foreach ($this as $champ => $valeur) {
             if( $valeur !== null && $champ != 'db' && $champ != 'table') {
                 $champs[] = "$champ = ?";
                 $valeurs[] = $valeur;
             }
         }
-        $valeurs[] = $id;
+        $valeurs[] = $this->id;
 
         $liste_champs = implode(', ', $champs);
 
@@ -99,12 +96,12 @@ class ModelBase extends Db
         $this->db = Db::getInstance();
         
         if($attributs !== null) {   
-            // requete préparée
+            // prepared request
             $query = $this->db->prepare($sql);
             $query->execute($attributs);
             return $query;
         } else {
-            // requete simple
+            // simple request
             return $this->db->query($sql);
         }
     }

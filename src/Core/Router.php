@@ -11,7 +11,7 @@ class Router
         // delete trailing slash
         $uri = $_SERVER['REQUEST_URI'];
         //check if uri is not empty
-        if (!empty($uri) && $uri[-1] === '/') {
+        if (!empty($uri) && $uri != '/' && $uri[-1] === '/') {
 
             //delete /
             $uri = substr($uri, 0, -1);
