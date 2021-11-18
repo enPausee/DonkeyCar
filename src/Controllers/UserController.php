@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function login()
     {
-        $this->render('user/login', []);
+        $this->render('user/login', compact('errors'));
     }
 
     public function register()
@@ -29,27 +29,27 @@ class UserController extends Controller
                 $password = Security::test_input($password);
                 
                 if(!Security::validateLength($firstName)) {
-                    $errors['lengthFirstName'][] = "Le prénom est trop court, il doit être compris entre ".Security::LENGTH_MINIMAL." et ".Security::LENGTH_MAXIMAL." caractères"; 
+                    $errors[] = "Le prénom est trop court, il doit être compris entre ".Security::LENGTH_MINIMAL." et ".Security::LENGTH_MAXIMAL." caractères"; 
                 }
 
                 if(!Security::validateLength($lastName)) {
-                    $errors['lengthLastName'][] = "Le nom est trop court, il doit être compris entre ".Security::LENGTH_MINIMAL." et ".Security::LENGTH_MAXIMAL." caractères"; 
+                    $errors[] = "Le nom est trop court, il doit être compris entre ".Security::LENGTH_MINIMAL." et ".Security::LENGTH_MAXIMAL." caractères"; 
                 }
 
                 if(!Security::validateLengthPassword($password)) {
-                    $errors['lengthPassword'][] = "Le mot de passe est trop court, il doit être compris entre ".Security::LENGTH_MINIMAL_PASSWORD." et ".Security::LENGTH_MAXIMAL." caractères"; 
+                    $errors[] = "Le mot de passe est trop court, il doit être compris entre ".Security::LENGTH_MINIMAL_PASSWORD." et ".Security::LENGTH_MAXIMAL." caractères"; 
                 }
 
                 if (!Security::validateEmail($email)) {
-                    $errors['email'][] = "L'email n'est pas valide"; 
+                    $errors[] = "L'email n'est pas valide"; 
                 }
 
                 if (DataBase::is_already_use('email', $email, "user")) {
-                    $errors['email'][] = "Cet email existe déjà"; 
+                    $errors[] = "Cet email existe déjà"; 
                 }
 
                 if (!Security::validatePhone($phone)) {
-                    $errors['phone'][] = "Le numéro de téléphone n'est pas valide";
+                    $errors[] = "Le numéro de téléphone n'est pas valide";
                 }
                 
                 if (count($errors) == 0) {

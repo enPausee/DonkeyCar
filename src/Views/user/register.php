@@ -1,21 +1,5 @@
 <h1>Inscription</h1>
-<p class="errors">
-    <?php
-    if (!empty($errors) && count($errors) > 0) { ?>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-        <?php foreach ($errors as $key => $value) {
-                foreach ($value as $error) {
-                    echo $error.'<br/>';
-                }
-        }?>
-        </div>
-    <?php 
-    }
-    ?>
-
-</p>
+<?php include(ROOT.'/src/Views/parts/_showErrorsForm.php') ?>
 <form method="POST" action="/user/register">
     <div class="mb-3">
         <label for="firstName" class="form-label">FirstName</label>
