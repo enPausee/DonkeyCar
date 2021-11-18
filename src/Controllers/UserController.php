@@ -58,13 +58,13 @@ class UserController extends Controller
                     ->setPassword($passwordHashed)
                     ->setBirthDate($birthDate);
 
-                   
-                    Http::set_flash("L'utilisateur a été crée", 'success');
-
-                    //Redirection vers la liste des écrivains
-                    //redirect('?page=list-writer');
-                    header('Location: /');
-                    exit;
+                    $id = $user->create();
+                    if ($id) {
+                        Http::set_flash("L'utilisateur a été crée", 'success');
+    
+                        //Redirection vers la home page
+                        Http::redirect('/');
+                    }
                 }
             } else {
                 $errors[] = "Veuillez SVP remplir tous les champs !";

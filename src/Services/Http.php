@@ -7,4 +7,10 @@ class Http {
         $_SESSION['notification']['message'] = $message;
         $_SESSION['notification']['type'] = $type;
     }
+
+    public static function redirect(string $url)
+    {
+        header('Location: '.$url);
+        exit;
+    }
 }
