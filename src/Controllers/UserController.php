@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Services\DataBase;
 use App\Services\Http;
 use App\Services\Security;
 
@@ -43,6 +44,10 @@ class UserController extends Controller
                     $errors['email'][] = "L'email n'est pas valide"; 
                 }
 
+                if (DataBase::is_already_use('email', $email, "user")) {
+                    $errors['email'][] = "Cet email existe déjà"; 
+                }
+
                 if (!Security::validatePhone($phone)) {
                     $errors['phone'][] = "Le numéro de téléphone n'est pas valide";
                 }
@@ -64,14 +69,19 @@ class UserController extends Controller
     
                         //Redirection vers la home page
                         Http::redirect('/');
+                    } else {
+                        Http::set_flash("Un problème est survenu lors de la création du count", 'warning');
+                        Security::save_input_data();
                     }
+                } else {
+                    Security::save_input_data();
                 }
             } else {
                 $errors[] = "Veuillez SVP remplir tous les champs !";
-              //  save_input_data();
+                Security::save_input_data();
             }
         } else {
-           // clear_input_data();
+           Security::clear_input_data();
         }
         $this->render('user/register', compact('errors'));
     }

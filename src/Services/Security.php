@@ -48,4 +48,28 @@ class Security {
     {
         return self::LENGTH_MINIMAL_PASSWORD <= mb_strlen($str) && mb_strlen($str)<= self::LENGTH_MAXIMAL;
     }
+
+    public static function save_input_data()
+    {
+       foreach ($_POST as $key => $value) {
+           if (strpos($key,'password') === false) {
+               $_SESSION['input'][$key] = $value;
+           }
+       }
+    }
+
+    public static function clear_input_data()
+    {
+       if (isset($_SESSION['input'])) {
+        $_SESSION['input'] = [];
+       }
+    }
+
+    public static function get_input_data($key)
+    {
+       return !empty($_SESSION['input'][$key])
+        ? self::test_input($_SESSION['input'][$key])
+        :null;
+    }
+    
 }
