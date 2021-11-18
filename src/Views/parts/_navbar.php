@@ -13,9 +13,19 @@
                     <a class="nav-link" href="/brand">Liste des marques</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/category">Liste des catégories</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/model">Liste des models</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/register">Register</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+<?php include(ROOT.'/src/Views/parts/_flash.php') ?>
