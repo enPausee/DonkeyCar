@@ -11,3 +11,4 @@
     
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<a href="/user/register">Pas encore inscrit - Je m'inscris</a>

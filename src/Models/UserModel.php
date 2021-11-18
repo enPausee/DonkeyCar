@@ -20,6 +20,16 @@ class UserModel extends ModelBase
     {
         $this->table = 'user';
     }
+    
+    /**
+     * retrieve a user from his login
+     *
+     * @param string $email
+     */
+    public function findOneByEmail(string $email)
+    {
+        return $this->myQuery("SELECT * FROM {$this->table} WHERE email = ?",[$email])->fetch();
+    }
 
     /**
      * Get the value of id
