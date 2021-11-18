@@ -11,9 +11,47 @@ class UserController extends Controller
 {
     public function login()
     {
+        if (isset($_POST['submit'])) {
+            
+            if (Security::not_empty(['email', 'password'])) {
+                extract($_POST);
+                $errors = [];
+                $email = Security::test_input($email);
+                $password = Security::test_input($password);
+                
+                $userModel = new UserModel;
+                $userArray = $userModel->findOneByEmail($email);
+
+                if(!$userArray) {
+                    $errors[] = "Identifiants incorrects"; 
+                }
+
+                if (count($errors) == 0) {
+                    $user = $userModel->hydrate($userArray);
+                    
+                    // check password
+                    if(password_verify($password, $user->getPassword())) {
+                        $user->setSession();
+                        Http::set_flash('Bienvenue '.$user->getFirstName().' '.$user->getLastName());
+                        //Redirection vers la home page
+                        Http::redirect('/');
+                    } else {
+                       $errors[] = "Identifiants incorrects"; 
+                    }
+
+                } else {
+                    Security::save_input_data();
+                }
+            } else {
+                $errors[] = "Veuillez SVP remplir tous les champs !";
+                Security::save_input_data();
+            }
+        } else {
+           Security::clear_input_data();
+        }
         $this->render('user/login', compact('errors'));
     }
-
+    
     public function register()
     {
         if (isset($_POST['submit'])) {
@@ -84,5 +122,17 @@ class UserController extends Controller
            Security::clear_input_data();
         }
         $this->render('user/register', compact('errors'));
+    }
+
+    public function logout()
+    {
+        if(isset($_SESSION['user'])) {
+            unset($_SESSION['user']);
+        }
+        
+        Http::set_flash('Déconnexion effectuée');
+
+        //Redirection vers la home page
+        Http::redirect('/');
     }
 }
