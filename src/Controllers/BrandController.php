@@ -1,9 +1,8 @@
-<?php 
+<?php
 
 namespace App\Controllers;
 
 use App\Models\BrandModel;
-use App\Models\Model;
 
 class BrandController extends Controller
 {
@@ -21,7 +20,7 @@ class BrandController extends Controller
          * delete()     -->ok
          */
         $model = new BrandModel;
-     
+
         $brands = $model->findAll();
 
         $this->render('brand/index', compact('brands'));
@@ -30,7 +29,7 @@ class BrandController extends Controller
     public function show(int $id)
     {
         $brand = "";
-        if($id) {
+        if ($id) {
             $model = new BrandModel;
             $brand = $model->find($id);
         }
