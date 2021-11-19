@@ -32,6 +32,16 @@ class UserModel extends ModelBase
     }
 
     /**
+     * retrieve a user from his id
+     *
+     * @param int $id
+     */
+    function findOneById($id)
+    {
+        return $this->myQuery("SELECT * FROM {$this->table} WHERE id = ?",[$id])->fetch();
+    }
+
+    /**
      * Create session'user
      */
     public function setSession()
@@ -221,5 +231,5 @@ class UserModel extends ModelBase
         $this->birthDate = $birthDate;
 
         return $this;
-    }
+    }    
 }

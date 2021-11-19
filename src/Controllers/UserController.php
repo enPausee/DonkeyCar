@@ -135,4 +135,11 @@ class UserController extends Controller
         //Redirection vers la home page
         Http::redirect('/');
     }
+
+    public function profil()
+    {
+        $userModel = new UserModel;
+        $user = $userModel->findOneById($_SESSION['user']['id']);
+        $this->render('user/profil', compact('user'));
+    }
 }
