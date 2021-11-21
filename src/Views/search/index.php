@@ -18,5 +18,3 @@
     </option>
     <?php endforeach?>
 </select>
-
-<p>dsgddhd</p>
