@@ -4,6 +4,8 @@ namespace App\Core;
 
 use App\Controllers\MainController;
 
+error_reporting(false);
+
 class Router
 {
     public function run()
