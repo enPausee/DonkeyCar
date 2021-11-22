@@ -9,6 +9,7 @@ $pdo->exec("DROP TABLE category");
 $pdo->exec("DROP TABLE model");
 $pdo->exec("DROP TABLE extra");
 $pdo->exec("DROP TABLE vehicle");
-$pdo->exec("DROP TABLE orders");
+$pdo->exec("DROP TABLE order_extra");
+$pdo->exec("DROP TABLE `order`");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 echo "Databases TABLES deleted successfuly ";
