@@ -9,7 +9,7 @@ $pdo->exec("TRUNCATE TABLE model");
 $pdo->exec("TRUNCATE TABLE category");
 $pdo->exec("TRUNCATE TABLE extra");
 $pdo->exec("TRUNCATE TABLE vehicle");
-$pdo->exec("TRUNCATE TABLE orders");
+$pdo->exec("TRUNCATE TABLE `order`");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 echo "Databases TABLES cleaned successfuly ";
 
