@@ -2,7 +2,7 @@
 
 namespace App\Core;
 
-use App\Controllers\MainController;
+use App\Controller\MainController;
 
 class Router
 {
@@ -24,12 +24,11 @@ class Router
         $params = [];
         if (isset($_GET['p'])) {
             $params = explode('/', $_GET['p']);
-
         }
 
         if ($params[0] != '') {
 
-            $controller = '\\App\\Controllers\\' . ucfirst(array_shift($params)) . 'Controller';
+            $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller';
             $controller = new $controller;
 
             // We retrieve the 2nd URL parameter
