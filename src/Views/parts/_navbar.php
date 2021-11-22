@@ -14,6 +14,9 @@
                     <a class="nav-link" href="/search">Recherche</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/recherche">Recherche 2</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/brand">Liste des marques</a>
                 </li>
                 <li class="nav-item">

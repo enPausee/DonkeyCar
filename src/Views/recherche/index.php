@@ -1,12 +1,11 @@
 <div>
     <label for="category">Choissisez votre catégorie de véhicule</label>
-    <select>
-        <?php foreach ($categories as $category): ?>
-        <option>
-            <?=$category->name?>
-        </option>
-        <?php endforeach?>
-    </select>
+
+    <?php foreach ($categories as $category): ?>
+    <input type="checkbox" name="category" value="<? echo ($category->name)?>">
+
+    <?php endforeach?>
+
 </div>
 <br>
 <div>

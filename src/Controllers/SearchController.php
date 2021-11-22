@@ -27,22 +27,22 @@ class SearchController extends Controller
 
     }
 
-    public function searchShow(int $id)
+    public function searchShow()
     {
         $brand = "";
-        if (isset($_GET['valide'])) {
+        if (!empty($_GET['valide'])) {
             var_dump($_GET['valide']);
             $model = new BrandModel;
 
-            $brands = $model->findBy($_GET['brand']);
+            $brands = $model->find();
 
             $model = new CategoryModel;
 
-            $categories = $model->findBy($_GET['category']);
+            $categories = $model->find();
 
             $model = new Model;
 
-            $models = $model->findBy($_GET['model']);
+            $models = $model->find();
             var_dump($categories);
             die;
 

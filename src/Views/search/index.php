@@ -3,7 +3,7 @@
         <label for="category">Choissisez votre catégorie de véhicule</label>
         <select name="category">
             <?php foreach ($categories as $category): ?>
-            <option>
+            <option value="<?=$category->id?>">
                 <?=$category->name?>
             </option>
             <?php endforeach?>
