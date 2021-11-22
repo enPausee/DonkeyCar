@@ -15,6 +15,8 @@ class UserModel extends ModelBase
     protected $password;
     protected $role;
     protected $birthDate;
+    protected $image;
+    protected $created_at;
 
     public function __construct()
     {
@@ -231,5 +233,33 @@ class UserModel extends ModelBase
         $this->birthDate = $birthDate;
 
         return $this;
+    }
+
+    /**
+     * Get the value of image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of image
+     *
+     * @return  self
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of created_at
+     */
+    public function getCreated_at()
+    {
+        return $this->created_at;
     }
 }

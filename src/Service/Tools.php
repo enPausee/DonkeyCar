@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-class Http
+class Tools
 {
     public static function set_flash($message, $type = 'info')
     {
