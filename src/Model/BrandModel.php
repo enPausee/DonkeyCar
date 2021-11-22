@@ -6,6 +6,8 @@ class BrandModel extends ModelBase
 {
     protected $id;
     protected $name;
+    protected $image;
+    protected $created_at;
 
     public function __construct()
     {
@@ -50,5 +52,33 @@ class BrandModel extends ModelBase
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Get the value of image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of image
+     *
+     * @return  self
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of created_at
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
     }
 }

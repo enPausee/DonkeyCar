@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-class Security
+class Validator
 {
 
     const LENGTH_MINIMAL = 3;

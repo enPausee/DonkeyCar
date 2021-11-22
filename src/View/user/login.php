@@ -1,5 +1,5 @@
 <h1>Connexion</h1>
-<?php include(ROOT . '/src/Views/parts/_showErrorsForm.php') ?>
+<?php include(ROOT . '/src/View/parts/_showErrorsForm.php') ?>
 <form method="POST" action="/user/login">
     <div class="mb-3">
         <label for="email" class="form-label">Email address</label>

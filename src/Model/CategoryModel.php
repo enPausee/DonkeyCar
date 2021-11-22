@@ -6,6 +6,7 @@ class CategoryModel extends ModelBase
 {
     protected $id;
     protected $name;
+    protected $created_at;
 
     public function __construct()
     {
@@ -50,5 +51,13 @@ class CategoryModel extends ModelBase
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Get the value of created_at
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Core;
 
 use App\Controller\MainController;
+use App\Service\Tools;
 
 class Router
 {
@@ -19,7 +20,7 @@ class Router
             http_response_code(301);
 
             // redirect to uri
-            header('Location: ' . $uri);
+            Tools::redirect($uri);
         }
         $params = [];
         if (isset($_GET['p'])) {
@@ -28,7 +29,7 @@ class Router
 
         if ($params[0] != '') {
 
-            $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller';
+            $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller';  //Génère le nom de la classe à partir du nom du controller
             $controller = new $controller;
 
             // We retrieve the 2nd URL parameter
