@@ -22,13 +22,35 @@ class UserModel extends ModelBase
     }
     
     /**
-     * retrieve a user from his login
+     * retrieve a user from his email
      *
      * @param string $email
      */
     public function findOneByEmail(string $email)
     {
         return $this->myQuery("SELECT * FROM {$this->table} WHERE email = ?",[$email])->fetch();
+    }
+
+    /**
+     * retrieve a user from his id
+     *
+     * @param int $id
+     */
+    function findOneById($id)
+    {
+        return $this->myQuery("SELECT * FROM {$this->table} WHERE id = ?",[$id])->fetch();
+    }
+
+    /**
+     * Create session'user
+     */
+    public function setSession()
+    {
+        $_SESSION['user'] = [
+            'id' => $this->id,
+            'email' => $this->email,
+            'fullName' => $this->firstName.' '.$this->lastName
+        ];
     }
 
     /**
@@ -209,5 +231,5 @@ class UserModel extends ModelBase
         $this->birthDate = $birthDate;
 
         return $this;
-    }
+    }    
 }

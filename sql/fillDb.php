@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'connDb.php';
 
@@ -37,8 +37,8 @@ echo "CATEGORY,";
 $pdo->exec('INSERT INTO model (id, name) VALUES (null,"peugeot 301")');
 $pdo->exec('INSERT INTO model (id, name) VALUES (null,"peugeot 308")');
 $pdo->exec('INSERT INTO model (id, name) VALUES (null,"peugeot 5008")');
-$pdo->exec('INSERT INTO model (id, name) VALUES (null,"penault talisman")');
-$pdo->exec('INSERT INTO model (id, name) VALUES (null,"penault megane")');
+$pdo->exec('INSERT INTO model (id, name) VALUES (null,"renault talisman")');
+$pdo->exec('INSERT INTO model (id, name) VALUES (null,"renault megane")');
 $pdo->exec('INSERT INTO model (id, name) VALUES (null,"fiat tipo")');
 $pdo->exec('INSERT INTO model (id, name) VALUES (null,"fiat panda")');
 $pdo->exec('INSERT INTO model (id, name) VALUES (null,"fiat 500")');
