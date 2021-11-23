@@ -29,7 +29,7 @@ $pdo->exec("CREATE TABLE `brand` (
   `image` varchar(255) DEFAULT 'placeholder.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
+  `deleted_at` datetime NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
@@ -41,7 +41,7 @@ $pdo->exec("CREATE TABLE `category` (
   `name` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
+  `deleted_at` datetime NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
@@ -57,7 +57,7 @@ $pdo->exec("CREATE TABLE `model` (
   `number_door` int NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
+  `deleted_at` datetime NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
@@ -71,7 +71,7 @@ $pdo->exec("CREATE TABLE `extra` (
   `image` varchar(255) DEFAULT '150.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
+  `deleted_at` datetime NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
@@ -88,7 +88,7 @@ $pdo->exec("CREATE TABLE `vehicle` (
   `image` varchar(255) DEFAULT '150.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
+  `deleted_at` datetime NULL,
   PRIMARY KEY (`id`),
   KEY `fk_vehicle_brand` (`brand_id`),
   KEY `fk_vehicle_category` (`category_id`),
@@ -108,7 +108,7 @@ $pdo->exec("CREATE TABLE `order` (
   `price` float NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
+  `deleted_at` datetime NULL,
   `user_id` int NOT NULL,
   `vehicle_id` int NOT NULL,
   PRIMARY KEY (`id`),
