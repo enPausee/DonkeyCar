@@ -9,6 +9,11 @@ class ExtraModel extends ModelBase
     protected $daily_price;
     protected $image;
 
+    public function __construct()
+    {
+        $this->table = 'extra';
+    }
+
     /**
      * Get the value of id
      */

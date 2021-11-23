@@ -26,7 +26,7 @@ echo 'Tables : USER, ';
 $pdo->exec("CREATE TABLE `brand` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `image` varchar(255) DEFAULT '150.png',
+  `image` varchar(255) DEFAULT 'placeholder.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,

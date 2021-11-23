@@ -13,6 +13,11 @@ class VehicleModel extends ModelBase
     protected $number_door;
     protected $image;
 
+    public function __construct()
+    {
+        $this->table = 'vehicle';
+    }
+
     /**
      * Get the value of id
      */
