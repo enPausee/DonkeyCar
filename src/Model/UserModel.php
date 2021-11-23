@@ -56,6 +56,7 @@ class UserModel extends ModelBase
         ];
     }
 
+
     /**
      * Get the value of id
      */
@@ -77,19 +78,19 @@ class UserModel extends ModelBase
     }
 
     /**
-     * Get the value of firstName
+     * Get the value of first_name
      */
-    public function getFirstName()
+    public function getFirst_name()
     {
         return $this->first_name;
     }
 
     /**
-     * Set the value of firstName
+     * Set the value of first_name
      *
      * @return  self
      */
-    public function setFirstName($first_name)
+    public function setFirst_name($first_name)
     {
         $this->first_name = $first_name;
 
@@ -97,31 +98,23 @@ class UserModel extends ModelBase
     }
 
     /**
-     * Get the value of lastName
+     * Get the value of last_name
      */
-    public function getLastName()
+    public function getLast_name()
     {
         return $this->last_name;
     }
 
     /**
-     * Set the value of lastName
+     * Set the value of last_name
      *
      * @return  self
      */
-    public function setLastName($last_name)
+    public function setLast_name($last_name)
     {
         $this->last_name = $last_name;
 
         return $this;
-    }
-
-    /**
-     * Get the value of created_at
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
     }
 
     /**
@@ -205,19 +198,19 @@ class UserModel extends ModelBase
     }
 
     /**
-     * Get the value of birthDate
+     * Get the value of birth_date
      */
-    public function getBirthDate()
+    public function getBirth_date()
     {
-        return $this->birthDate;
+        return $this->birth_date;
     }
 
     /**
-     * Set the value of birthDate
+     * Set the value of birth_date
      *
      * @return  self
      */
-    public function setBirthDate($birth_date)
+    public function setBirth_date($birth_date)
     {
         $this->birth_date = $birth_date;
 
@@ -240,6 +233,54 @@ class UserModel extends ModelBase
     public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+    /**
+     * Get the value of created_at
+     */
+    public function getCreated_at()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Get the value of updated_at
+     */
+    public function getUpdated_at()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Set the value of updated_at
+     *
+     * @return  self
+     */
+    public function setUpdated_at($updated_at)
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of deleted_at
+     */
+    public function getDeleted_at()
+    {
+        return $this->deleted_at;
+    }
+
+    /**
+     * Set the value of deleted_at
+     *
+     * @return  self
+     */
+    public function setDeleted_at($deleted_at)
+    {
+        $this->deleted_at = $deleted_at;
 
         return $this;
     }
