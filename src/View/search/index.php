@@ -1,4 +1,4 @@
-<form action="/search/searchShow" method="get">
+<form action="/search/searchShow" method="post">
     <div>
         <label for="category">Choissisez votre catégorie de véhicule</label>
         <select name="category">
@@ -14,7 +14,7 @@
         <label for="brand">Choissisez votre marque de véhicule</label>
         <select name="brand">
             <?php foreach ($brands as $brand): ?>
-            <option><?=$brand->name?></option>
+            <option value="<?=$brand->id?>"><?=$brand->name?></option>
             <?php endforeach?>
         </select>
     </div>
@@ -23,22 +23,21 @@
         <label for="model">Choissisez votre modéle de véhicule</label>
         <select name="model">
             <?php foreach ($models as $model): ?>
-            <option>
-                <?=$model->name?>
+            <option value="<?=$model->id?>"><?=$model->name?>
             </option>
             <?php endforeach?>
         </select>
     </div>
     <br>
     <div>
-        <label for="date debut">Sélectionnez votre date de début de location</label>
+        <label for=" date-debut">Sélectionnez votre date de début de location</label>
         <input type="date" name="date début">
     </div>
     <br>
     <div>
-        <label for="date fin">Sélectionnez votre date de fin de location</label>
+        <label for="date-fin">Sélectionnez votre date de fin de location</label>
         <input type="date" name="date fin">
 
-        <button type="submit" name="valide">valider</button>
+        <button type="submit" name="valide" value="valide">valider</button>
     </div>
 </form>

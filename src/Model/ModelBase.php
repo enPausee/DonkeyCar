@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Core\Db;
+use PDOException;
 
 class ModelBase extends Db
 {
@@ -101,12 +102,20 @@ class ModelBase extends Db
 
         if ($attributs !== null) {
             // prepared request
-            $query = $this->db->prepare($sql);
-            $query->execute($attributs);
-            return $query;
+            try {
+                $query = $this->db->prepare($sql);
+                $query->execute($attributs);
+                return $query;
+            } catch (\PDOException $e) {
+                var_dump($e->getMessage());
+            }
         } else {
             // simple request
-            return $this->db->query($sql);
+            try {
+                return $this->db->query($sql);
+            } catch (PDOException $e) {
+                var_dump($e->getMessage());
+            }
         }
     }
 }
