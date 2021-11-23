@@ -2,19 +2,12 @@
 
 namespace App\Model;
 
-class BrandModel extends ModelBase
+class ExtraModel extends ModelBase
 {
     protected $id;
     protected $name;
+    protected $daily_price;
     protected $image;
-    protected $created_at;
-    protected $updated_at;
-    protected $deleted_at;
-
-    public function __construct()
-    {
-        $this->table = 'brand';
-    }
 
     /**
      * Get the value of id
@@ -57,6 +50,26 @@ class BrandModel extends ModelBase
     }
 
     /**
+     * Get the value of daily_price
+     */
+    public function getDailyPrice()
+    {
+        return $this->daily_price;
+    }
+
+    /**
+     * Set the value of daily_price
+     *
+     * @return  self
+     */
+    public function setDailyPrice($daily_price)
+    {
+        $this->daily_price = $daily_price;
+
+        return $this;
+    }
+
+    /**
      * Get the value of image
      */
     public function getImage()
@@ -74,13 +87,5 @@ class BrandModel extends ModelBase
         $this->image = $image;
 
         return $this;
-    }
-
-    /**
-     * Get the value of created_at
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
     }
 }

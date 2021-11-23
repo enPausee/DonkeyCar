@@ -7,6 +7,8 @@ class CategoryModel extends ModelBase
     protected $id;
     protected $name;
     protected $created_at;
+    protected $updated_at;
+    protected $deleted_at;
 
     public function __construct()
     {
