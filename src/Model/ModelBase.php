@@ -70,21 +70,21 @@ class ModelBase extends Db
         return $this;
     }
 
-    public function update()
+    public function update(int $id, $model)
     {
         $champs = [];
         $valeurs = [];
 
         // We loop to explode the table
-        foreach ($this as $champ => $valeur) {
+        foreach ($model as $champ => $valeur) {
             if ($valeur !== null && $champ != 'db' && $champ != 'table') {
                 $champs[] = "$champ = ?";
                 $valeurs[] = $valeur;
             }
         }
-        $valeurs[] = $this->id;
+        $valeurs[] = $id;
 
-        $liste_champs = implode(', ', $champs);
+        $liste_champs = implode(', ', $champs);       
 
         $upd = $this->myQuery('UPDATE ' . $this->table . ' SET ' . $liste_champs . ' WHERE id = ?', $valeurs);
         return $upd->rowCount();
