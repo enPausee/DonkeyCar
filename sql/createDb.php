@@ -16,7 +16,7 @@ $pdo->exec("CREATE TABLE `user` (
   `image` varchar(255) DEFAULT '150.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime NOT NULL,
+  `deleted_at` datetime NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
 
@@ -73,9 +73,9 @@ $pdo->exec("CREATE TABLE `extra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
 
 
-echo 'PRICE, ';
+echo 'EXTRA, ';
 
-// Create model
+// Create vehicle
 $pdo->exec("CREATE TABLE `vehicle` (
   `id` int NOT NULL AUTO_INCREMENT,
   `brand_id` int NOT NULL,
@@ -104,7 +104,7 @@ $pdo->exec("CREATE TABLE `vehicle` (
 
 echo 'VEHICLE, ';
 
-// Create model
+// Create order
 $pdo->exec("CREATE TABLE `order` (
   `id` int NOT NULL AUTO_INCREMENT,
   `start_location` date NOT NULL,
@@ -124,7 +124,7 @@ $pdo->exec("CREATE TABLE `order` (
 
 
 
-echo 'ORDER_EXTRA, ';
+echo 'ORDER, ';
 
 // Create model
 $pdo->exec("CREATE TABLE `order_extra` (
@@ -137,3 +137,5 @@ $pdo->exec("CREATE TABLE `order_extra` (
   CONSTRAINT `fk_orders_has_extra_extra1` FOREIGN KEY (`extra_id`) REFERENCES `extra` (`id`),
   CONSTRAINT `fk_orders_has_extra_orders1` FOREIGN KEY (`orders_id`) REFERENCES `order` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
+
+echo 'ORDER_EXTRA, ';

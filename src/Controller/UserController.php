@@ -55,21 +55,21 @@ class UserController extends Controller
     {
         if (isset($_POST['submit'])) {
 
-            if (Validator::not_empty(['firstName', 'lastName', 'email', 'password', 'phone', 'birthDate'])) {
+            if (Validator::not_empty(['first_name', 'last_name', 'email', 'password', 'phone', 'birth_date'])) {
                 extract($_POST);
                 $errors = [];
-                $firstName = Validator::test_input($firstName);
-                $lastName = Validator::test_input($lastName);
+                $first_name = Validator::test_input($first_name);
+                $last_name = Validator::test_input($last_name);
                 $email = Validator::test_input($email);
                 $phone = Validator::test_input($phone);
-                $birthDate = Validator::test_input($birthDate);
+                $birth_date = Validator::test_input($birth_date);
                 $password = Validator::test_input($password);
 
-                if (!Validator::validateLength($firstName)) {
+                if (!Validator::validateLength($first_name)) {
                     $errors[] = "Le prénom est trop court, il doit être compris entre " . Validator::LENGTH_MINIMAL . " et " . Validator::LENGTH_MAXIMAL . " caractères";
                 }
 
-                if (!Validator::validateLength($lastName)) {
+                if (!Validator::validateLength($last_name)) {
                     $errors[] = "Le nom est trop court, il doit être compris entre " . Validator::LENGTH_MINIMAL . " et " . Validator::LENGTH_MAXIMAL . " caractères";
                 }
 
@@ -93,12 +93,12 @@ class UserController extends Controller
                     $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
                     $user = new UserModel;
                     $user
-                        ->setFirstName($firstName)
-                        ->setLastName($lastName)
+                        ->setFirstName($first_name)
+                        ->setLastName($last_name)
                         ->setEmail($email)
                         ->setPhone($phone)
                         ->setPassword($passwordHashed)
-                        ->setBirthDate($birthDate);
+                        ->setBirthDate($birth_date);
 
                     $id = $user->create();
                     if ($id) {

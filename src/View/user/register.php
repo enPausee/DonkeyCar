@@ -2,12 +2,12 @@
 <?php include(ROOT . '/src/View/parts/_showErrorsForm.php') ?>
 <form method="POST" action="/user/register">
     <div class="mb-3">
-        <label for="firstName" class="form-label">FirstName</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" value="<?= App\Service\Validator::get_input_data('firstName');  ?>">
+        <label for="first_name" class="form-label">FirstName</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" value="<?= App\Service\Validator::get_input_data('first_name');  ?>">
     </div>
     <div class="mb-3">
-        <label for="lastName" class="form-label">LastName</label>
-        <input type="text" class="form-control" id="lastName" name="lastName" value="<?= App\Service\Validator::get_input_data('lastName');  ?>">
+        <label for="last_name" class="form-label">LastName</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" value="<?= App\Service\Validator::get_input_data('last_name');  ?>">
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
@@ -18,8 +18,8 @@
         <input type="text" class="form-control" id="phone" name="phone" value="<?= App\Service\Validator::get_input_data('phone');  ?>">
     </div>
     <div class="mb-3">
-        <label for="birthDate" class="form-label">BirthDate</label>
-        <input type="date" class="form-control" id="birthDate" name="birthDate" value="<?= App\Service\Validator::get_input_data('birthDate');  ?>">
+        <label for="birth_date" class="form-label">BirthDate</label>
+        <input type="date" class="form-control" id="birth_date" name="birth_date" value="<?= App\Service\Validator::get_input_data('birth_date');  ?>">
     </div>
     <div class="mb-3">
         <label for="password" class="form-label">Password</label>

@@ -7,14 +7,13 @@ use App\Model\ModelBase;
 class UserModel extends ModelBase
 {
     protected $id;
-    protected $firstName;
-    protected $lastName;
-    protected $createdAccount;
+    protected $first_name;
+    protected $last_name;
     protected $phone;
     protected $email;
     protected $password;
     protected $role;
-    protected $birthDate;
+    protected $birth_date;
     protected $image;
     protected $created_at;
 
@@ -51,7 +50,7 @@ class UserModel extends ModelBase
         $_SESSION['user'] = [
             'id' => $this->id,
             'email' => $this->email,
-            'fullName' => $this->firstName . ' ' . $this->lastName
+            'fullName' => $this->first_name . ' ' . $this->last_name
         ];
     }
 
@@ -80,7 +79,7 @@ class UserModel extends ModelBase
      */
     public function getFirstName()
     {
-        return $this->firstName;
+        return $this->first_name;
     }
 
     /**
@@ -88,9 +87,9 @@ class UserModel extends ModelBase
      *
      * @return  self
      */
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->firstName = $firstName;
+        $this->first_name = $first_name;
 
         return $this;
     }
@@ -100,7 +99,7 @@ class UserModel extends ModelBase
      */
     public function getLastName()
     {
-        return $this->lastName;
+        return $this->last_name;
     }
 
     /**
@@ -108,9 +107,9 @@ class UserModel extends ModelBase
      *
      * @return  self
      */
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->lastName = $lastName;
+        $this->last_name = $last_name;
 
         return $this;
     }
@@ -120,7 +119,7 @@ class UserModel extends ModelBase
      */
     public function getCreatedAccount()
     {
-        return $this->createdAccount;
+        return $this->created_at;
     }
 
     /**
@@ -128,9 +127,9 @@ class UserModel extends ModelBase
      *
      * @return  self
      */
-    public function setCreatedAccount($createdAccount)
+    public function setCreatedAccount($created_at)
     {
-        $this->createdAccount = $createdAccount;
+        $this->created_at = $created_at;
 
         return $this;
     }
@@ -228,9 +227,9 @@ class UserModel extends ModelBase
      *
      * @return  self
      */
-    public function setBirthDate($birthDate)
+    public function setBirthDate($birth_date)
     {
-        $this->birthDate = $birthDate;
+        $this->birth_date = $birth_date;
 
         return $this;
     }
