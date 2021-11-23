@@ -16,6 +16,8 @@ class UserModel extends ModelBase
     protected $birth_date;
     protected $image;
     protected $created_at;
+    protected $updated_at;
+    protected $deleted_at;
 
     public function __construct()
     {
@@ -115,23 +117,11 @@ class UserModel extends ModelBase
     }
 
     /**
-     * Get the value of createdAccount
+     * Get the value of created_at
      */
-    public function getCreatedAccount()
+    public function getCreatedAt()
     {
         return $this->created_at;
-    }
-
-    /**
-     * Set the value of createdAccount
-     *
-     * @return  self
-     */
-    public function setCreatedAccount($created_at)
-    {
-        $this->created_at = $created_at;
-
-        return $this;
     }
 
     /**
@@ -252,13 +242,5 @@ class UserModel extends ModelBase
         $this->image = $image;
 
         return $this;
-    }
-
-    /**
-     * Get the value of created_at
-     */
-    public function getCreated_at()
-    {
-        return $this->created_at;
     }
 }
