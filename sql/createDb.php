@@ -18,7 +18,7 @@ $pdo->exec("CREATE TABLE `user` (
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'Tables : USER, ';
 
@@ -31,12 +31,11 @@ $pdo->exec("CREATE TABLE `brand` (
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'BRAND, ';
 
-// Create model
+// Create category
 $pdo->exec("CREATE TABLE `category` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -44,7 +43,7 @@ $pdo->exec("CREATE TABLE `category` (
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'CATEGORY, ';
 
@@ -52,11 +51,15 @@ echo 'CATEGORY, ';
 $pdo->exec("CREATE TABLE `model` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `gear_box` enum('AUTOMATIC','MANUAL') DEFAULT 'MANUAL',
+  `fuel` enum('ELECTRIC','DIESEL','ESSENCE','HYBRID') DEFAULT 'ESSENCE',
+  `number_seat` int NOT NULL,
+  `number_door` int NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'MODEL, ';
 
@@ -70,8 +73,7 @@ $pdo->exec("CREATE TABLE `extra` (
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'EXTRA, ';
 
@@ -81,12 +83,8 @@ $pdo->exec("CREATE TABLE `vehicle` (
   `brand_id` int NOT NULL,
   `model_id` int NOT NULL,
   `category_id` int NOT NULL,
-  `gear_box` enum('AUTOMATIC','MANUAL') DEFAULT 'MANUAL',
-  `fuel` enum('ELECTRIC','DIESEL','ESSENCE') DEFAULT 'ESSENCE',
   `required_age` int NOT NULL,
   `daily_price` float NOT NULL,
-  `number_seat` int NOT NULL,
-  `number_door` int NOT NULL,
   `image` varchar(255) DEFAULT '150.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -98,9 +96,7 @@ $pdo->exec("CREATE TABLE `vehicle` (
   CONSTRAINT `fk_vehicle_brand` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`id`),
   CONSTRAINT `fk_vehicle_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
   CONSTRAINT `fk_vehicle_model` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
-
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'VEHICLE, ';
 
@@ -120,13 +116,11 @@ $pdo->exec("CREATE TABLE `order` (
   KEY `fk_order_vehicle` (`vehicle_id`),
   CONSTRAINT `fk_order_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `fk_order_vehicle` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
-
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'ORDER, ';
 
-// Create model
+// Create order_extra
 $pdo->exec("CREATE TABLE `order_extra` (
   `orders_id` int NOT NULL,
   `extra_id` int NOT NULL,
@@ -136,6 +130,6 @@ $pdo->exec("CREATE TABLE `order_extra` (
   KEY `fk_orders_has_extra_orders1_idx` (`orders_id`),
   CONSTRAINT `fk_orders_has_extra_extra1` FOREIGN KEY (`extra_id`) REFERENCES `extra` (`id`),
   CONSTRAINT `fk_orders_has_extra_orders1` FOREIGN KEY (`orders_id`) REFERENCES `order` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci");
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci");
 
 echo 'ORDER_EXTRA, ';

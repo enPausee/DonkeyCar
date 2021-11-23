@@ -5,12 +5,8 @@ namespace App\Model;
 class VehicleModel extends ModelBase
 {
     protected $id;
-    protected $gear_box;
-    protected $fuel;
     protected $required_age;
     protected $daily_price;
-    protected $number_seat;
-    protected $number_door;
     protected $image;
 
     public function __construct()
@@ -34,46 +30,6 @@ class VehicleModel extends ModelBase
     public function setId($id)
     {
         $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of gear_box
-     */
-    public function getGearBox()
-    {
-        return $this->gear_box;
-    }
-
-    /**
-     * Set the value of gear_box
-     *
-     * @return  self
-     */
-    public function setGearBox($gear_box)
-    {
-        $this->gear_box = $gear_box;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of fuel
-     */
-    public function getFuel()
-    {
-        return $this->fuel;
-    }
-
-    /**
-     * Set the value of fuel
-     *
-     * @return  self
-     */
-    public function setFuel($fuel)
-    {
-        $this->fuel = $fuel;
 
         return $this;
     }
@@ -114,46 +70,6 @@ class VehicleModel extends ModelBase
     public function setDailyPrice($daily_price)
     {
         $this->daily_price = $daily_price;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of number_seat
-     */
-    public function getNumberSeat()
-    {
-        return $this->number_seat;
-    }
-
-    /**
-     * Set the value of number_seat
-     *
-     * @return  self
-     */
-    public function setNumberSeat($number_seat)
-    {
-        $this->number_seat = $number_seat;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of number_door
-     */
-    public function getNumberDoor()
-    {
-        return $this->number_door;
-    }
-
-    /**
-     * Set the value of number_door
-     *
-     * @return  self
-     */
-    public function setNumberDoor($number_door)
-    {
-        $this->number_door = $number_door;
 
         return $this;
     }
