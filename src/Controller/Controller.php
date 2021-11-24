@@ -4,6 +4,10 @@ namespace App\Controller;
 
 abstract class Controller
 {
+    protected $title = "Donkey-Car";
+    protected $description = "Réservation de voiture aux meilleurs prix";
+    protected $h1 = "Donkey-Car";
+
     public function render(string $view, array $datas = [], string $layout = 'layout/default')
     {
         //On extrait le contenue des $datas
