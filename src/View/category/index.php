@@ -1,4 +1,4 @@
-<p>Page des catégories</p>
+<h1><?= $this->h1 ?></h1>
 <ul>
     <?php foreach ($categories as $category) : ?>
         <li>

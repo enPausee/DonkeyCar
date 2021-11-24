@@ -1,1 +1,1 @@
-<p>Page d'accueil</p>
+<h1>Page d'accueil</h1>

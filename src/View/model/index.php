@@ -1,4 +1,4 @@
-<p>Page des models</p>
+<h1><?= $this->h1 ?></h1>
 <ul>
     <?php foreach ($models as $model) : ?>
         <li>
