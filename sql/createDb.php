@@ -13,7 +13,7 @@ $pdo->exec("CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `role` enum('ADMIN','USER') DEFAULT 'USER',
   `birth_date` date NOT NULL,
-  `image` varchar(255) DEFAULT '150.png',
+  `image` varchar(255) DEFAULT 'placeholder.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime NULL,
