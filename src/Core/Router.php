@@ -4,6 +4,7 @@ namespace App\Core;
 
 use App\Controller\MainController;
 use App\Service\Tools;
+use Exception;
 
 class Router
 {
@@ -30,8 +31,12 @@ class Router
         if ($params[0] != '') {
 
             $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller';  //Génère le nom de la classe à partir du nom du controller
+            if(!class_exists($controller)) {
+               http_response_code(404);
+                //Redirection vers la 404 page
+                Tools::redirect('/error/_404');
+            }
             $controller = new $controller;
-
             // We retrieve the 2nd URL parameter
             $action = (isset($params[0])) ? array_shift($params) : 'index';
 
@@ -40,7 +45,8 @@ class Router
                 (isset($params[0])) ? call_user_func_array([$controller, $action], $params) : $controller->$action();
             } else {
                 http_response_code(404);
-                echo "La page recherchée n'existe pas";
+                //Redirection vers la 404 page
+                Tools::redirect('/error/_404');
             }
         } else {
             //no parameters

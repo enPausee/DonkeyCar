@@ -1,3 +1,4 @@
+
     <form action="/search/searchShow" method="post">
         <div>
             <label for="category">Choissisez votre catégorie de véhicule</label>
@@ -41,3 +42,4 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="/js/script.js"></script>
+
