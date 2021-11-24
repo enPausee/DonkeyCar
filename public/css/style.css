@@ -2,3 +2,19 @@
   background-color: red;
   color: white;
 }
+
+div.page_error img {
+  width: 100%;
+  height: 100vh;
+}
+
+div.page_error {
+  position: relative;
+}
+
+div.page_error a {
+  position: absolute;
+  display: block;
+  bottom: 7rem;
+  right: 14rem;
+}

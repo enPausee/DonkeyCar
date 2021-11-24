@@ -32,7 +32,7 @@ class UserController extends Controller
                     // check password
                     if (password_verify($password, $user->getPassword())) {
                         $user->setSession();
-                        Tools::set_flash('Bienvenue ' . $user->getFirstName() . ' ' . $user->getLastName());
+                        Tools::set_flash('Bienvenue ' . $user->getFirst_name() . ' ' . $user->getLast_name());
                         //Redirection vers la home page
                         Tools::redirect('/');
                     } else {
@@ -93,12 +93,12 @@ class UserController extends Controller
                     $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
                     $user = new UserModel;
                     $user
-                        ->setFirstName($first_name)
-                        ->setLastName($last_name)
+                        ->setFirst_name($first_name)
+                        ->setLast_name($last_name)
                         ->setEmail($email)
                         ->setPhone($phone)
                         ->setPassword($passwordHashed)
-                        ->setBirthDate($birth_date);
+                        ->setBirth_date($birth_date);
 
                     $id = $user->create();
                     if ($id) {
@@ -140,5 +140,30 @@ class UserController extends Controller
         $userModel = new UserModel;
         $user = $userModel->findOneById($_SESSION['user']['id']);
         $this->render('user/profil', compact('user'));
+    }
+
+    public function edit()
+    {
+        $userModel = new UserModel;
+        $user = $userModel->findOneById($_SESSION['user']['id']);
+        $this->render('user/edit', compact('user'));
+    }
+
+    public function saveEdit()
+    {
+        $userModel = new UserModel;
+
+        $donnees = [
+            'last_name' => $_POST['last_name'],
+            'email' => $_POST['email'],
+            'phone' => $_POST['phone'],
+        ];
+
+        $user = $userModel->hydrate($donnees);
+        $userModel->update($_SESSION['user']['id'], $donnees);
+
+        Tools::set_flash('Modification du profil effectuée');
+        //Redirection vers la page profil
+        Tools::redirect('/user/profil');
     }
 }

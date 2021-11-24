@@ -9,6 +9,11 @@ class VehicleModel extends ModelBase
     protected $daily_price;
     protected $image;
 
+    public function __construct()
+    {
+        $this->table = 'vehicle';
+    }
+
     /**
      * Get the value of id
      */

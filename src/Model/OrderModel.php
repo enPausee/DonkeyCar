@@ -9,6 +9,11 @@ class OrderModel extends ModelBase
     protected $end_location;
     protected $price;
 
+    public function __construct()
+    {
+        $this->table = 'order';
+    }
+
     /**
      * Get the value of id
      */
