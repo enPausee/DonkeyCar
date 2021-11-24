@@ -4,5 +4,5 @@
 <?php
 echo "
 <pre>";
-print_r($_POST);
+print_r(var_dump($_POST));
 echo "</pre>";
