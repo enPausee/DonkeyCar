@@ -1,14 +1,14 @@
 <h1><?=$this->h1?></h1>
 
-<form action="#" method="post">
+<form action="search/searchShow" method="post" onsubmit="getValue(false);">
 
 
-    <div class="container-fluid">
-        <label for="date">Sélectionnnez vos date de location</label>
-        <input id="date" class="flatpickr" type="date" name="dateDebut">
-        <input type="time" name="timeDebut" id="date">
-        <input id="date" class="flatpickr2" type="date" name="dateFin">
-        <input type="time" name="timeFin" id="date">
+    <div class="container">
+        <label>From Date</label>
+        <input type="date" name="" max="" id="fromDate">
+        <br><br>
+        <label>To Date</label>
+        <input type="date" name="" min="" id="toDate">
     </div>
     <br>
     <div>
