@@ -22,4 +22,24 @@ class DataBase
         $stmt->closeCursor();
         return $count;
     }
+
+    public function getVehicle($category,$brand, $model,$dateDebut,$dateFin)
+    {
+        $db = Db::getInstance();
+
+        $stmt = $db->prepare("SELECT * FROM vehicle");
+   //     $stmt->bindValue(':value', $value, \PDO::PARAM_STR);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        $stmt->closeCursor();
+        return $count;
+        
+        /*
+        [] => 1
+    [brand] => 1
+    [model] => 1
+    [dateDebut] => 2021-11-08
+    [dateFin] => 2021-11-20
+    */
+    }
 }

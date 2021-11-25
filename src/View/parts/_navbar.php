@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/model">Liste des models</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vehicle">Liste des vehicule</a>
+                </li>
 
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
