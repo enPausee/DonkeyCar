@@ -16,6 +16,12 @@ class Tools
         exit;
     }
 
+    /**
+     * Allows you to activate the menu according to the url
+     *
+     * @param string $path
+     * @return void
+     */
     public static function setActive(string $path)
     {
         $uri = $_SERVER['REQUEST_URI'];
