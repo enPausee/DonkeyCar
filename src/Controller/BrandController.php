@@ -25,7 +25,7 @@ class BrandController extends Controller
         if ($id) {
             $model = new BrandModel;
             $brand = $model->find($id);
-            $this->description = "description de". $brand->name;
+            $this->description = "description de ". $brand->name;
             $this->title .= ' - '. $brand->name;
             $this->h1 = $brand->name;
         }
