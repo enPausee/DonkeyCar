@@ -4,10 +4,10 @@ namespace App\Core;
 
 use App\Controller\MainController;
 use App\Service\Tools;
-use Exception;
 
 class Router
 {
+
     public function run()
     {
         // delete trailing slash
@@ -30,9 +30,9 @@ class Router
 
         if ($params[0] != '') {
 
-            $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller';  //Génère le nom de la classe à partir du nom du controller
-            if(!class_exists($controller)) {
-               http_response_code(404);
+            $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller'; //Génère le nom de la classe à partir du nom du controller
+            if (!class_exists($controller)) {
+                http_response_code(404);
                 //Redirection vers la 404 page
                 Tools::redirect('/error/_404');
             }
