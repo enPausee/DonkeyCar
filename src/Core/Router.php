@@ -28,7 +28,7 @@ class Router
             $params = explode('/', $_GET['p']);
         }
 
-        if ($params[0] != '') {
+        if (!empty($params) && count($params) > 0) {
 
             $controller = '\\App\\Controller\\' . ucfirst(array_shift($params)) . 'Controller';  //Génère le nom de la classe à partir du nom du controller
             if(!class_exists($controller)) {
