@@ -25,6 +25,10 @@ use App\Service\Tools;
                 <li class="nav-item <?= Tools::setActive("model"); ?>">
                     <a class="nav-link" href="/model">Liste des models</a>
                 </li>
+                <li class="nav-item <?= Tools::setActive("vehicle"); ?>">
+                    <a class="nav-link" href="/vehicle">Liste des vehicules</a>
+                </li>
+
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) : ?>
