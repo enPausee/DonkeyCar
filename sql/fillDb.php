@@ -11,7 +11,7 @@ $pdo->exec("TRUNCATE TABLE extra");
 $pdo->exec("TRUNCATE TABLE vehicle");
 $pdo->exec("TRUNCATE TABLE `order`");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
-echo "Databases TABLES cleaned successfuly ";
+echo "Databases TABLES cleaned successfuly. ";
 
 // BRAND
 $pdo->exec('INSERT INTO brand (id, name) VALUES (null,"peugeot")');
@@ -19,7 +19,7 @@ $pdo->exec('INSERT INTO brand (id, name) VALUES (null,"renault")');
 $pdo->exec('INSERT INTO brand (id, name) VALUES (null,"fiat")');
 $pdo->exec('INSERT INTO brand (id, name) VALUES (null,"mercedes")');
 $pdo->exec('INSERT INTO brand (id, name) VALUES (null,"bmw")');
-echo "INSERT DATAS BRAND, ";
+echo "INSERTING DATAS: BRAND, ";
 
 // CATEGORY
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"berline")');
@@ -31,26 +31,26 @@ $pdo->exec('INSERT INTO category (id, name) VALUES (null,"4x4")');
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"break")');
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"pick up")');
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"roadster")');
-echo "CATEGORY,";
+echo "CATEGORY, ";
 
 // MODEL
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"peugeot 307","automatic","diesel",5,5)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"peugeot 308",5,5)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"peugeot 5008","automatic","diesel",7,5)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"renault talisman","automatic","diesel",5,5)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"renault megane",5,5)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"fiat tipo","automatic","electric",5,3)');
-$pdo->exec('INSERT INTO model (id, name, fuel, number_seat, number_door) VALUES (null,"fiat panda","diesel",5,3)');
-$pdo->exec('INSERT INTO model (id, name, fuel, number_seat, number_door) VALUES (null,"fiat 500","electric",5,3)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"fiat tipo",5,5)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"mercedes classe A",5,5)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"mercedes amg sl",2,3)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"mercedes classe C","automatic","hybrid",5,5)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"mercedes classe B","automatic","essence",5,5)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"bmw x5","manual","hybrid",5,2)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"bmw série5",6,5)');
-$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"bmw série1","automatic","hybrid",5,5)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"bmw x6",7,2)');
-$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"bmw série 6 gran turismo",3,4)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"307","automatic","diesel",5,5)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"308",5,5)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"5008","automatic","diesel",7,5)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"talisman","automatic","diesel",5,5)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"megane",5,5)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"tipo","automatic","electric",5,3)');
+$pdo->exec('INSERT INTO model (id, name, fuel, number_seat, number_door) VALUES (null,"panda","diesel",5,3)');
+$pdo->exec('INSERT INTO model (id, name, fuel, number_seat, number_door) VALUES (null,"500","electric",5,3)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"tipo",5,5)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"classe A",5,5)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"amg sl",2,3)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"classe C","automatic","hybrid",5,5)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"classe B","automatic","essence",5,5)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"x5","manual","hybrid",5,2)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"série5",6,5)');
+$pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_door) VALUES (null,"série1","automatic","hybrid",5,5)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"x6",7,2)');
+$pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"série 6 gran turismo",3,4)');
 
-echo "MODEL,";
+echo "MODEL. Databases Filled";

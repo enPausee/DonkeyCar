@@ -12,6 +12,9 @@ class CategoryController extends Controller
 
         $categories = $model->findAll();
 
+        $this->description = "description des catégories";
+        $this->title .= ' -  catégories';
+        $this->h1 = 'Nos catégories';
         $this->render('category/index', compact('categories'));
     }
 }
