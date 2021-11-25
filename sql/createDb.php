@@ -85,7 +85,7 @@ $pdo->exec("CREATE TABLE `vehicle` (
   `category_id` int NOT NULL,
   `year_driver_license_needed` int NOT NULL,
   `daily_price` float NOT NULL,
-  `image` varchar(255) DEFAULT '150.png',
+  `image` varchar(255) DEFAULT 'placeholder.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime NULL,

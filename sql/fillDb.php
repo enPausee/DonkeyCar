@@ -53,4 +53,8 @@ $pdo->exec('INSERT INTO model (id, name, gear_box, fuel, number_seat, number_doo
 $pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"x6",7,2)');
 $pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,"série 6 gran turismo",3,4)');
 
-echo "MODEL. Databases Filled";
+echo "MODEL, ";
+
+//VEHICLE
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (2,4,1,18,80,null,"talisman.jpg")');
+echo "VEHICLE. Databases Filled";
