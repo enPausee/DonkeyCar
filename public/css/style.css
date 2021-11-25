@@ -18,3 +18,8 @@ div.page_error a {
   bottom: 7rem;
   right: 14rem;
 }
+
+li.active a {
+  background: white;
+  color: #000 !important;
+}

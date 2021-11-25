@@ -1,2 +1,1 @@
-<h1>La marque</h1>
-<?= $brand->name ?>
+<h1><?= $brand->name ?></h1>

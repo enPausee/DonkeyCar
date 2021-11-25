@@ -7,7 +7,7 @@ use App\Model\ModelBase;
 class VehicleModel extends ModelBase
 {
     protected $id;
-    protected $required_age;
+    protected $year_driver_license_needed;
     protected $daily_price;
     protected $image;
     protected $created_at;
@@ -16,7 +16,7 @@ class VehicleModel extends ModelBase
     protected $brand_id;
     protected $model_id;
     protected $category_id;
-  
+
     public function __construct()
     {
         $this->table = 'vehicle';
@@ -24,13 +24,13 @@ class VehicleModel extends ModelBase
 
     public function getAllProperties()
     {
-        return $this->myQuery("
-        SELECT v.required_age, v.daily_price, v.image,v.created_at, b.name AS marque,m.name AS model,c.name AS category FROM {$this->table} AS v 
+        return $this->myQuery(
+            "
+        SELECT v.year_driver_license_needed, v.daily_price, v.image,v.created_at, b.name AS marque,m.name AS model,c.name AS category FROM {$this->table} AS v 
         LEFT JOIN brand AS b ON v.brand_id=b.id
         LEFT JOIN model AS m ON v.model_id=m.id
         LEFT JOIN category AS c ON v.category_id=c.id"
         )->fetchAll();
-
     }
 
     /**
@@ -54,21 +54,21 @@ class VehicleModel extends ModelBase
     }
 
     /**
-     * Get the value of required_age
+     * Get the value of year_driver_license_needed
      */
-    public function getRequiredAge()
+    public function getYear_driver_license_needed()
     {
-        return $this->required_age;
+        return $this->year_driver_license_needed;
     }
 
     /**
-     * Set the value of required_age
+     * Set the value of year_driver_license_needed
      *
      * @return  self
      */
-    public function setRequiredAge($required_age)
+    public function setYear_driver_license_needed($year_driver_license_needed)
     {
-        $this->required_age = $required_age;
+        $this->year_driver_license_needed = $year_driver_license_needed;
 
         return $this;
     }
@@ -76,7 +76,7 @@ class VehicleModel extends ModelBase
     /**
      * Get the value of daily_price
      */
-    public function getDailyPrice()
+    public function getDaily_price()
     {
         return $this->daily_price;
     }
@@ -86,7 +86,7 @@ class VehicleModel extends ModelBase
      *
      * @return  self
      */
-    public function setDailyPrice($daily_price)
+    public function setDaily_price($daily_price)
     {
         $this->daily_price = $daily_price;
 
@@ -115,7 +115,7 @@ class VehicleModel extends ModelBase
 
     /**
      * Get the value of created_at
-     */ 
+     */
     public function getCreated_at()
     {
         return $this->created_at;
@@ -125,7 +125,7 @@ class VehicleModel extends ModelBase
      * Set the value of created_at
      *
      * @return  self
-     */ 
+     */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
@@ -135,7 +135,7 @@ class VehicleModel extends ModelBase
 
     /**
      * Get the value of updated_at
-     */ 
+     */
     public function getUpdated_at()
     {
         return $this->updated_at;
@@ -145,7 +145,7 @@ class VehicleModel extends ModelBase
      * Set the value of updated_at
      *
      * @return  self
-     */ 
+     */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
@@ -155,7 +155,7 @@ class VehicleModel extends ModelBase
 
     /**
      * Get the value of deleted_at
-     */ 
+     */
     public function getDeleted_at()
     {
         return $this->deleted_at;
@@ -165,7 +165,7 @@ class VehicleModel extends ModelBase
      * Set the value of deleted_at
      *
      * @return  self
-     */ 
+     */
     public function setDeleted_at($deleted_at)
     {
         $this->deleted_at = $deleted_at;
@@ -175,7 +175,7 @@ class VehicleModel extends ModelBase
 
     /**
      * Get the value of brand_id
-     */ 
+     */
     public function getBrand_id()
     {
         return $this->brand_id;
@@ -185,7 +185,7 @@ class VehicleModel extends ModelBase
      * Set the value of brand_id
      *
      * @return  self
-     */ 
+     */
     public function setBrand_id($brand_id)
     {
         $this->brand_id = $brand_id;
@@ -195,7 +195,7 @@ class VehicleModel extends ModelBase
 
     /**
      * Get the value of model_id
-     */ 
+     */
     public function getModel_id()
     {
         return $this->model_id;
@@ -205,7 +205,7 @@ class VehicleModel extends ModelBase
      * Set the value of model_id
      *
      * @return  self
-     */ 
+     */
     public function setModel_id($model_id)
     {
         $this->model_id = $model_id;
@@ -215,7 +215,7 @@ class VehicleModel extends ModelBase
 
     /**
      * Get the value of category_id
-     */ 
+     */
     public function getCategory_id()
     {
         return $this->category_id;
@@ -225,7 +225,7 @@ class VehicleModel extends ModelBase
      * Set the value of category_id
      *
      * @return  self
-     */ 
+     */
     public function setCategory_id($category_id)
     {
         $this->category_id = $category_id;
