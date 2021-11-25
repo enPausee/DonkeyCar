@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function login()
     {
-        $this->title .= ' - login';        
+        $this->title .= ' - login';
         $this->description = "Page de connexion";
         $this->h1 = "Connexion";
         if (isset($_POST['submit'])) {
