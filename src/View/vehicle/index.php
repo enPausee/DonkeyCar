@@ -35,8 +35,4 @@ td {
     </tbody>
     <tfoot></tfoot>
 </table>
-
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br>
