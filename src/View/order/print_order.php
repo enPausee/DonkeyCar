@@ -1,4 +1,14 @@
 <h1><?= $this->h1 ?></h1>
+<style>
+    th,
+    td {
+        text-align: center;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+</style>
 <table class="table table-hover">
   <thead>
     <tr>
