@@ -28,7 +28,7 @@
                 <td><?= $vehicle->model ?></td>
                 <td><?= $vehicle->category ?></td>
                 <td><?= $vehicle->year_driver_license_needed ?></td>
-                <td><?= $vehicle->daily_price ?></td>
+                <td><?= $vehicle->daily_price ?>€</td>
             </tr>
         <?php endforeach ?>
     </tbody>

@@ -31,6 +31,9 @@ $pdo->exec('INSERT INTO category (id, name) VALUES (null,"4x4")');
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"break")');
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"pick up")');
 $pdo->exec('INSERT INTO category (id, name) VALUES (null,"roadster")');
+$pdo->exec('INSERT INTO category (id, name) VALUES (null,"compacte")');
+$pdo->exec('INSERT INTO category (id, name) VALUES (null,"SUV")');
+
 echo "CATEGORY, ";
 
 // MODEL
@@ -56,5 +59,17 @@ $pdo->exec('INSERT INTO model (id, name, number_seat, number_door) VALUES (null,
 echo "MODEL, ";
 
 //VEHICLE
-$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (2,4,1,18,80,null,"talisman.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (1,1,10,1,25,null,"peugeot307.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (1,2,1,1,50,null,"peugeot308.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (1,3,11,1,50,null,"peugeot5008.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (2,4,1,1,40,null,"talisman.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (2,5,10,1,35,null,"megane.
+jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,6,10,1,20,null,"tipo.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,7,3,1,15,null,"fiatpanda.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,8,3,1,25,null,"fiat500.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,14,11,1,80,null,"bmwx5.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,15,1,1,80,null,"bmwserie5.jpg")');
+
+
 echo "VEHICLE. Databases Filled";

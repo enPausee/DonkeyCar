@@ -16,6 +16,7 @@ class VehicleModel extends ModelBase
     protected $brand_id;
     protected $model_id;
     protected $category_id;
+    protected $is_available;
 
     public function __construct()
     {
@@ -26,7 +27,7 @@ class VehicleModel extends ModelBase
     {
         return $this->myQuery(
             "
-        SELECT v.year_driver_license_needed, v.daily_price, v.image,v.created_at, b.name AS marque,m.name AS model,c.name AS category FROM {$this->table} AS v 
+        SELECT v.year_driver_license_needed, v.daily_price, v.image,v.created_at, v.is_available, b.name AS marque,m.name AS model,c.name AS category FROM {$this->table} AS v 
         LEFT JOIN brand AS b ON v.brand_id=b.id
         LEFT JOIN model AS m ON v.model_id=m.id
         LEFT JOIN category AS c ON v.category_id=c.id"
@@ -229,6 +230,26 @@ class VehicleModel extends ModelBase
     public function setCategory_id($category_id)
     {
         $this->category_id = $category_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of is_available
+     */ 
+    public function getIs_available()
+    {
+        return $this->is_available;
+    }
+
+    /**
+     * Set the value of is_available
+     *
+     * @return  self
+     */ 
+    public function setIs_available($is_available)
+    {
+        $this->is_available = $is_available;
 
         return $this;
     }
