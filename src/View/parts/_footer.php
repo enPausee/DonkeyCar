@@ -2,7 +2,7 @@
 
 use App\Service\Tools;
 ?>
-<footer class="fixed-bottom navbar-expand navbar-dark ">
+<footer class="navbar-expand navbar-dark ">
 
     <ul class="navbar me-auto mb-2 mb-lg-0 container">
         <li class="nav-item <?=Tools::setActive("/");?>">

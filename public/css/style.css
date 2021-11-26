@@ -1,105 +1,105 @@
 :root {
-	--degrade-color-1: #267486; /* première couleur de dégradé */
-	--degrade-color-2: #5faab0; /* deuxième couleur de dégradé */
-	--light-blue: #03e9f4; /* couleur bleu clair du button submit login*/
+  --degrade-color-1: #267486; /* première couleur de dégradé */
+  --degrade-color-2: #5faab0; /* deuxième couleur de dégradé */
+  --light-blue: #03e9f4; /* couleur bleu clair du button submit login*/
 }
 
 .errors {
-	background-color: red;
-	color: white;
+  background-color: red;
+  color: white;
 }
 
 div.page_error img {
-	width: 100%;
-	height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 div.page_error {
-	position: relative;
+  position: relative;
 }
 
 div.page_error a {
-	position: absolute;
-	display: block;
-	bottom: 7rem;
-	right: 14rem;
+  position: absolute;
+  display: block;
+  bottom: 7rem;
+  right: 14rem;
 }
 /* END ERRORS */
 
 /*section navbar*/
 
 li.active a {
-	background: white;
-	color: #000 !important;
+  background: white;
+  color: #000 !important;
 }
 
 .nav-donkey {
-	background: linear-gradient(
-		90deg,
-		var(--degrade-color-1),
-		var(--degrade-color-2)
-	);
-	color: #fff;
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
+  color: #fff;
 }
 
 /* HOME-PAGE */
 .home-page .banner {
-	background: url(../picture/banner.jpg) 50% 50%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 70vh;
+  background: url(../picture/banner.jpg) 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
 }
 
 .home-page .wrapper {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .home-page .wrapper .search {
-	border: 1px solid white;
-	color: white;
+  border: 1px solid white;
+  color: white;
 }
 
 .home-page h1 {
-	color: white;
+  color: white;
 }
 
 .home-page h1,
 .home-page h2 {
-	text-align: center;
-	margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .home-page .container-datepicker {
-	margin-top: 1rem;
-	display: flex;
-	justify-content: space-between;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .home-page .container-datepicker input:nth-child(1) {
-	margin-right: 1rem;
+  margin-right: 1rem;
 }
 .home-page .container-datepicker input {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 
 .home-page .container-one {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .home-page .container-one .box {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .home-page .container .opinion-grp {
-	box-shadow: 6px 6px 2px 1px rgba(185, 185, 202, 0.2);
+  box-shadow: 6px 6px 2px 1px rgba(185, 185, 202, 0.2);
 }
 
 .home-page .opinion {
-	text-align: center;
+  text-align: center;
 }
 .home-page .opinion-firstname {
-	text-align: center;
+  text-align: center;
 }
 
 /* END HOME-PAGE */
@@ -107,320 +107,324 @@ li.active a {
 /* Section for login */
 
 .login-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 400px;
-	padding: 40px;
-	transform: translate(-50%, -50%);
-	background: linear-gradient(var(--degrade-color-1), var(--degrade-color-2));
-	box-sizing: border-box;
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-	border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(var(--degrade-color-1), var(--degrade-color-2));
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
 .login-box h1 {
-	margin: 0 0 30px;
-	padding: 0;
-	color: #fff;
-	text-align: center;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
 }
 
 .login-box .user-box {
-	position: relative;
+  position: relative;
 }
 
 .login-box .user-box input {
-	width: 100%;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	margin-bottom: 30px;
-	border: none;
-	border-bottom: 1px solid #fff;
-	outline: none;
-	background: transparent;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
 }
 
 .login-box .user-box label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	pointer-events: all;
-	transition: 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: all;
+  transition: 0.5s;
 }
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
-	top: -20px;
-	left: 0;
-	color: var(--light-blue);
-	font-size: 12px;
+  top: -20px;
+  left: 0;
+  color: var(--light-blue);
+  font-size: 12px;
 }
 
 .login-box form a {
-	position: relative;
-	display: inline-block;
-	padding: 10px 20px;
-	color: var(--light-blue);
-	font-size: 16px;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	transition: 0.5s;
-	margin-top: 40px;
-	letter-spacing: 4px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--light-blue);
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
 }
 
 .login-box a span {
-	position: absolute;
-	display: block;
+  position: absolute;
+  display: block;
 }
 
 .login-input {
-	opacity: 1;
-	border: none;
-	background: #55a0a8;
-	color: var(--light-blue);
+  opacity: 1;
+  border: none;
+  background: #55a0a8;
+  color: var(--light-blue);
 }
 
 .login-box a span:nth-child(1) {
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 2px;
-	background: linear-gradient(90deg, transparent, var(--light-blue));
-	animation: btn-anim1 1s linear infinite;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--light-blue));
+  animation: btn-anim1 1s linear infinite;
 }
 
 @keyframes btn-anim1 {
-	0% {
-		left: -100%;
-	}
-	50%,
-	100% {
-		left: 100%;
-	}
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 .login-box a span:nth-child(2) {
-	top: -100%;
-	right: 0;
-	width: 2px;
-	height: 100%;
-	background: linear-gradient(180deg, transparent, var(--light-blue));
-	animation: btn-anim2 1s linear infinite;
-	animation-delay: 0.25s;
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--light-blue));
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
-	0% {
-		top: -100%;
-	}
-	50%,
-	100% {
-		top: 100%;
-	}
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
 }
 
 .login-box a span:nth-child(3) {
-	bottom: 0;
-	right: -100%;
-	width: 100%;
-	height: 2px;
-	background: linear-gradient(270deg, transparent, var(--light-blue));
-	animation: btn-anim3 1s linear infinite;
-	animation-delay: 0.5s;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--light-blue));
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
-	0% {
-		right: -100%;
-	}
-	50%,
-	100% {
-		right: 100%;
-	}
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
 }
 
 .login-box a span:nth-child(4) {
-	bottom: -100%;
-	left: 0;
-	width: 2px;
-	height: 100%;
-	background: linear-gradient(360deg, transparent, var(--light-blue));
-	animation: btn-anim4 1s linear infinite;
-	animation-delay: 0.75s;
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--light-blue));
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
-	0% {
-		bottom: -100%;
-	}
-	50%,
-	100% {
-		bottom: 100%;
-	}
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 /*section pour footer*/
 
 footer {
-	background: linear-gradient(
-		90deg,
-		var(--degrade-color-1),
-		var(--degrade-color-2)
-	);
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
 
-	/*position: sticky !important;
-	bottom: 0 !important;
-	width: 100%;*/
+  position: absolute !important;
+  width: 100%;
+  bottom: 0 !important;
+}
+
+body {
+  position: relative !important;
 }
 footer ul li {
-	list-style-type: none;
-	margin: 10px;
+  list-style-type: none;
+  margin: 10px;
 }
 footer ul li a {
-	text-decoration: none;
-	color: #03e9e8;
+  text-decoration: none;
+  color: #aeb89f;
 }
 
 footer ul li.active a {
-	background: white;
-	color: #000 !important;
+  background: white;
+  color: #000 !important;
 }
 
 footer ul {
-	padding-left: 10%;
+  padding-left: 10%;
 }
 
 /*style pour faq*/
 
 section ul li a {
-	color: black;
+  color: black;
 }
 div p a {
-	color: black;
+  color: black;
 }
 
 /* Section for register */
 
 .register-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 800px;
-	height: 600px;
-	padding: 40px;
-	transform: translate(-50%, -50%);
-	background: linear-gradient(var(--degrade-color-1), var(--degrade-color-2));
-	box-sizing: border-box;
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-	border-radius: 10px;
-	z-index: -1;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	gap: 0px 0px;
-	grid-template-areas:
-		"register-title register-title"
-		"register-first-name register-last-name"
-		"register-birthday register-phone"
-		"register-email register-email"
-		"register-mdp-1 register-mdp-1"
-		"register-mdp-2 register-mdp-2"
-		"register-submit register-submit";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 600px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(var(--degrade-color-1), var(--degrade-color-2));
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "register-title register-title"
+    "register-first-name register-last-name"
+    "register-birthday register-phone"
+    "register-email register-email"
+    "register-mdp-1 register-mdp-1"
+    "register-mdp-2 register-mdp-2"
+    "register-submit register-submit";
 }
 
 .register-title {
-	justify-self: center;
-	align-self: stretch;
-	grid-area: register-title;
+  justify-self: center;
+  align-self: stretch;
+  grid-area: register-title;
 }
 .register-last-name {
-	justify-self: center;
-	grid-area: register-last-name;
+  justify-self: center;
+  grid-area: register-last-name;
 }
 .register-birthday {
-	justify-self: center;
-	grid-area: register-birthday;
-	width: 70%;
+  justify-self: center;
+  grid-area: register-birthday;
+  width: 70%;
 }
 .register-phone {
-	justify-self: center;
-	grid-area: register-phone;
+  justify-self: center;
+  grid-area: register-phone;
 }
 .register-email {
-	justify-self: center;
-	grid-area: register-email;
+  justify-self: center;
+  grid-area: register-email;
 }
 .register-mdp-1 {
-	justify-self: center;
-	grid-area: register-mdp-1;
+  justify-self: center;
+  grid-area: register-mdp-1;
 }
 .register-mdp-2 {
-	justify-self: center;
-	grid-area: register-mdp-2;
+  justify-self: center;
+  grid-area: register-mdp-2;
 }
 .register-submit {
-	justify-self: center;
-	grid-area: register-submit;
-	height: 29px;
-	border: solid 1px var(--light-blue);
+  justify-self: center;
+  grid-area: register-submit;
+  height: 29px;
+  border: solid 1px var(--light-blue);
 }
 .register-first-name {
-	justify-self: center;
-	grid-area: register-first-name;
+  justify-self: center;
+  grid-area: register-first-name;
 }
 
 .register-box h1 {
-	margin: 0 0 30px;
-	padding: 0;
-	color: #fff;
-	text-align: center;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
 }
 
 .register-box .user-box {
-	position: relative;
+  position: relative;
 }
 
 .register-box .user-box input {
-	width: 100%;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	margin-bottom: 30px;
-	border: none;
-	border-bottom: 1px solid #fff;
-	outline: none;
-	background: transparent;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
 }
 
 .register-box .user-box label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	pointer-events: all;
-	transition: 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: all;
+  transition: 0.5s;
 }
 
 .register-box .user-box input:focus ~ label,
 .register-box .user-box input:valid ~ label {
-	top: -20px;
-	left: 0;
-	color: var(--light-blue);
-	font-size: 12px;
+  top: -20px;
+  left: 0;
+  color: var(--light-blue);
+  font-size: 12px;
 }
 
 .register-input {
-	opacity: 1;
-	border: none;
-	background: #55a0a8;
-	color: var(--light-blue);
+  opacity: 1;
+  border: none;
+  background: #55a0a8;
+  color: var(--light-blue);
 }
