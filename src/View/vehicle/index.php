@@ -1,36 +1,44 @@
-<h1>Liste des vehicules</h1>
-<style>
-    th,
-    td {
-        text-align: center;
-    }
-
-    td {
-        vertical-align: middle;
-    }
-</style>
-<table class="table">
-    <tbody>
-        <tr>
-            <th>Image</th>
-            <th>Marque</th>
-            <th>Model</th>
-            <th>Category</th>
-            <th>Années de permis nécéssaire</th>
-            <th>Tarif Journalier</th>
-        </tr>
-    </tbody>
-    <tbody>
-        <?php foreach ($vehicles as $vehicle) : ?>
-            <tr>
-                <td><img src="./picture/vehicle/<?= $vehicle->image ?>" width="150" height="150" alt="image'<?= $vehicle->model ?>"></td>
-                <td><?= $vehicle->marque ?></td>
-                <td><?= $vehicle->model ?></td>
-                <td><?= $vehicle->category ?></td>
-                <td><?= $vehicle->year_driver_license_needed ?></td>
-                <td><?= $vehicle->daily_price ?>€</td>
-            </tr>
-        <?php endforeach ?>
-    </tbody>
-    <tfoot></tfoot>
-</table>
+<div class="list-vehicle">
+  <div class="container">
+    <h1>Liste des vehicules</h1>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="filters">
+          <div class="type">
+            <p>Catégories</p>
+            <div class="row">
+              <?php foreach ($categories as $category) : ?>
+                <div class="col-md-6 category">
+                  <a href="#"><?= strtolower($category->name)  ?></a>
+                </div>
+              <?php endforeach; ?>
+            </div>
+            <hr>
+            <div class="price">
+              <label for="customRange1" class="form-label">Prix journalier</label>
+              <input type="range" class="form-range" id="customRange1">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="container">
+          <div class="row ">
+            <?php foreach ($vehicles as $vehicle) : ?>
+              <div class="col-md-5 vehicle">
+                <div class="image">
+                  <img class="image-fluid" src="./picture/vehicle/<?= $vehicle->image ?>" width="200" height="200" alt="image'<?= $vehicle->model ?>">
+                </div>
+                <div class="daily_price">
+                  <?= $vehicle->daily_price ?><span> €</span>
+                </div>
+                <div class="description">
+                  <?= $vehicle->marque . ' ' . $vehicle->model ?>
+                </div>
+              </div>
+            <?php endforeach;  ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

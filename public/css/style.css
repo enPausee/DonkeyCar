@@ -104,7 +104,6 @@ li.active a {
 
 /* END HOME-PAGE */
 
-
 /* Section for login */
 
 .login-box {
@@ -384,4 +383,75 @@ li.active a {
   border: none;
   background: #55a0a8;
   color: var(--light-blue);
+}
+
+.list-vehicle table th,
+.list-vehicle table td {
+  text-align: center;
+}
+
+.list-vehicle table td {
+  vertical-align: middle;
+}
+
+.list-vehicle .container .vehicle {
+  position: relative;
+  box-shadow: 2px 2px #888888;
+  margin-bottom: 1rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-right: 1rem !important;
+}
+.list-vehicle .container .vehicle .image img {
+  margin: 0 auto;
+  display: block;
+}
+.list-vehicle .container .vehicle .daily_price {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border: 1px solid dark;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
+}
+
+.list-vehicle .container .vehicle .description {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #4d99a3;
+}
+
+.list-vehicle .filters .category {
+  border: 1px solid #4d99a3;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.list-vehicle .filters .category a {
+  text-decoration: none;
+  color: #4d99a3;
+}
+
+.list-vehicle .filters .category:hover {
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
+}
+
+.list-vehicle .filters .category a:hover {
+  color: white;
 }
