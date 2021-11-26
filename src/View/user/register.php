@@ -1,31 +1,61 @@
-<h1>Inscription</h1>
 <?php include(ROOT . '/src/View/parts/_showErrorsForm.php') ?>
-<form method="POST" action="/user/register">
-    <div class="mb-3">
-        <label for="first_name" class="form-label">FirstName</label>
-        <input type="text" class="form-control" id="first_name" name="first_name" value="<?= App\Service\Validator::get_input_data('first_name');  ?>">
-    </div>
-    <div class="mb-3">
-        <label for="last_name" class="form-label">LastName</label>
-        <input type="text" class="form-control" id="last_name" name="last_name" value="<?= App\Service\Validator::get_input_data('last_name');  ?>">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" value="<?= App\Service\Validator::get_input_data('email');  ?>">
-    </div>
-    <div class="mb-3">
-        <label for="phone" class="form-label">Phone number</label>
-        <input type="text" class="form-control" id="phone" name="phone" value="<?= App\Service\Validator::get_input_data('phone');  ?>">
-    </div>
-    <div class="mb-3">
-        <label for="birth_date" class="form-label">BirthDate</label>
-        <input type="date" class="form-control" id="birth_date" name="birth_date" value="<?= App\Service\Validator::get_input_data('birth_date');  ?>">
-    </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password">
+
+<form method="POST" action="/user/register" class="register-box">
+
+    <div class="register-title">
+        <h1><?= $this->h1 ?></h1>
     </div>
 
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    <div class="register-first-name">
+        <div class="user-box">
+            <input type="text" id="first_name" name="first_name" value="<?= App\Service\Validator::get_input_data('first_name');  ?>">
+            <label for="first_name">FirstName</label>
+        </div>
+    </div>
+
+    <div class="register-last-name">
+        <div class="user-box">
+            <input type="text" id="last_name" name="last_name" value="<?= App\Service\Validator::get_input_data('last_name');  ?>">
+            <label for="last_name">LastName</label>
+        </div>
+    </div>
+
+    <div class="register-birthday">
+        <div class="user-box">
+            <input type="date" id="birth_date" name="birth_date" value="<?= App\Service\Validator::get_input_data('birth_date');  ?>">
+            <label for="birth_date">BirthDate</label>
+        </div>
+    </div>
+
+    <div class="register-phone">
+        <div class="user-box">
+            <input type="text" id="phone" name="phone" value="<?= App\Service\Validator::get_input_data('phone');  ?>">
+            <label for="phone">Phone</label>
+        </div>
+    </div>
+
+    <div class="register-email">
+        <div class="user-box">
+            <input type="text" id="email" name="email" value="<?= App\Service\Validator::get_input_data('email');  ?>">
+            <label for="email">Email</label>
+        </div>
+    </div>
+
+    <div class="register-mdp-1">
+        <div class="user-box">
+            <input type="password" id="password" name="password" value="<?= App\Service\Validator::get_input_data('password');  ?>">
+            <label for="password">Password</label>
+        </div>
+    </div>
+
+    <div class="register-mdp-2">
+        <div class="user-box">
+            <input type="password" id="password_confirm" name="password_confirm" value="<?= App\Service\Validator::get_input_data('password_confirm');  ?>">
+            <label for="password_confirm">Password Confirm</label>
+        </div>
+    </div>
+
+    <div class="register-submit">
+        <input type="submit" name="submit" value="Submit" class="login-input"></input>
+    </div>
 </form>
-<a href="/user/login">Déjà inscrit - Me connecter</a>

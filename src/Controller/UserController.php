@@ -56,6 +56,9 @@ class UserController extends Controller
 
     public function register()
     {
+        $this->title .= ' - register';        
+        $this->description = "Page d'inscription";
+        $this->h1 = "Inscription";
         if (isset($_POST['submit'])) {
 
             if (Validator::not_empty(['first_name', 'last_name', 'email', 'password', 'phone', 'birth_date'])) {
