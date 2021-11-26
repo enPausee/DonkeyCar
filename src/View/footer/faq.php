@@ -3,17 +3,17 @@ namespace App\View\footer;
 
 ?>
 
-<h1>FAQ</h1>
+<h1><?=$this->h1?></h1>
 <section>
     <ul>
-        <li><a href="#contact">Comment puis je vous joindre</a></li>
-        <li><a href="#paiement">Comment puis je payer ma location</a></li>
-        <li><a href="#consultation">Puis je consultez les tarifs sans effectuez de reservation</a></li>
+        <li><a href="#contact">Comment puis-je vous joindre</a></li>
+        <li><a href="#paiement">Comment puis-je payer ma location</a></li>
+        <li><a href="#consultation">Puis-je consultez les tarifs sans effectuer de reservation</a></li>
         <li><a href="#annulation">Est il possible de modifier ou annuler ma réservation après avoir recu ma
                 confirmation</a></li>
         <li><a href="#limite">Existe t'il une limite de kilométrage pour ma location</a></li>
-        <li><a href="#facture">Puis je obtenir une copie de ma facture</a></li>
-        <li><a href="#pays">Puis je me rendre dans un autre pays au volant du vehicule</a></li>
+        <li><a href="#facture">Puis-je obtenir une copie de ma facture</a></li>
+        <li><a href="#pays">Puis-je me rendre dans un autre pays au volant du vehicule</a></li>
         <li><a href="#depot">Un dépôt de garantie sera t'il prélevé lorsque je retire la voiture</a></li>
     </ul>
 </section>

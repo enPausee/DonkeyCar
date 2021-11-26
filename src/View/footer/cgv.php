@@ -1,4 +1,8 @@
-<h1>CGV</h1>
+<?php
+namespace App\View\footer;
+
+?>
+<h1><?=$this->h1?></h1>
 
 <div class="container">
     <pre>CONDITIONS GÉNÉRALES

@@ -12,6 +12,10 @@ class ModelController extends Controller
 
         $models = $model->findAll();
 
+        $this->description = "description des modèles";
+        $this->title .= ' -  modèles';
+        $this->h1 = 'Nos modèles';
+
         $this->render('model/index', compact('models'));
     }
 }
