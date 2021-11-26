@@ -18,12 +18,12 @@ class OrderModel extends ModelBase
   {
     return $this->myQuery(
       "
-        SELECT o.start_location, o.end_location, o.price, o.created_at, b.name AS marque, m.name AS model, c.name AS category FROM `{$this->table}` AS o
+        SELECT o.start_location, o.end_location, o.price, o.created_at, v.image, b.name AS marque, m.name AS model, c.name AS category FROM `{$this->table}` AS o
         LEFT JOIN vehicle AS v ON v.id = o.vehicle_id
         LEFT JOIN brand AS b ON v.brand_id = b.id
         LEFT JOIN model AS m ON v.model_id = m.id
         LEFT JOIN category AS c ON v.category_id = c.id
-        WHERE o.id = {$_SESSION['user']['id']}
+        WHERE o.user_id = {$_SESSION['user']['id']}
         "
     )->fetchAll();
   }
