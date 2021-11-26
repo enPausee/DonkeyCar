@@ -24,8 +24,10 @@ div.page_error a {
 	bottom: 7rem;
 	right: 14rem;
 }
+/* END ERRORS */
 
 /*section navbar*/
+
 li.active a {
 	background: white;
 	color: #000 !important;
@@ -40,11 +42,69 @@ li.active a {
 	color: #fff;
 }
 
-/* Section for login */
-
-html {
-	height: 100%;
+/* HOME-PAGE */
+.home-page .banner {
+	background: url(../picture/banner.jpg) 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 70vh;
 }
+
+.home-page .wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.home-page .wrapper .search {
+	border: 1px solid white;
+	color: white;
+}
+
+.home-page h1 {
+	color: white;
+}
+
+.home-page h1,
+.home-page h2 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.home-page .container-datepicker {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.home-page .container-datepicker input:nth-child(1) {
+	margin-right: 1rem;
+}
+.home-page .container-datepicker input {
+	flex-grow: 1;
+}
+
+.home-page .container-one {
+	margin-top: 1rem;
+}
+
+.home-page .container-one .box {
+	padding: 1rem;
+}
+
+.home-page .container .opinion-grp {
+	box-shadow: 6px 6px 2px 1px rgba(185, 185, 202, 0.2);
+}
+
+.home-page .opinion {
+	text-align: center;
+}
+.home-page .opinion-firstname {
+	text-align: center;
+}
+
+/* END HOME-PAGE */
+
+/* Section for login */
 
 .login-box {
 	position: absolute;
@@ -81,6 +141,7 @@ html {
 	outline: none;
 	background: transparent;
 }
+
 .login-box .user-box label {
 	position: absolute;
 	top: 0;
@@ -235,4 +296,123 @@ section ul li a {
 }
 div p a {
 	color: black;
+}
+
+/* Section for register */
+
+.register-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 800px;
+	height: 600px;
+	padding: 40px;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(var(--degrade-color-1), var(--degrade-color-2));
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	z-index: -1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		"register-title register-title"
+		"register-first-name register-last-name"
+		"register-birthday register-phone"
+		"register-email register-email"
+		"register-mdp-1 register-mdp-1"
+		"register-mdp-2 register-mdp-2"
+		"register-submit register-submit";
+}
+
+.register-title {
+	justify-self: center;
+	align-self: stretch;
+	grid-area: register-title;
+}
+.register-last-name {
+	justify-self: center;
+	grid-area: register-last-name;
+}
+.register-birthday {
+	justify-self: center;
+	grid-area: register-birthday;
+	width: 70%;
+}
+.register-phone {
+	justify-self: center;
+	grid-area: register-phone;
+}
+.register-email {
+	justify-self: center;
+	grid-area: register-email;
+}
+.register-mdp-1 {
+	justify-self: center;
+	grid-area: register-mdp-1;
+}
+.register-mdp-2 {
+	justify-self: center;
+	grid-area: register-mdp-2;
+}
+.register-submit {
+	justify-self: center;
+	grid-area: register-submit;
+	height: 29px;
+	border: solid 1px var(--light-blue);
+}
+.register-first-name {
+	justify-self: center;
+	grid-area: register-first-name;
+}
+
+.register-box h1 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+
+.register-box .user-box {
+	position: relative;
+}
+
+.register-box .user-box input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+
+.register-box .user-box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: all;
+	transition: 0.5s;
+}
+
+.register-box .user-box input:focus ~ label,
+.register-box .user-box input:valid ~ label {
+	top: -20px;
+	left: 0;
+	color: var(--light-blue);
+	font-size: 12px;
+}
+
+.register-input {
+	opacity: 1;
+	border: none;
+	background: #55a0a8;
+	color: var(--light-blue);
 }
