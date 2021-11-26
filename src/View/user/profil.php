@@ -9,6 +9,7 @@
                 <form action="/user/edit" method="POST">
                     <input type="submit" value="Edit profile" class="btn btn-secondary">
                 </form>
+                <a href="/order/print_order" class="btn btn-secondary" style="margin-top: 10px;">Voir vos locations</a>
             </div>
         </div>
         <div class="col-md-5 border-right">
