@@ -24,6 +24,10 @@ div.page_error a {
   bottom: 7rem;
   right: 14rem;
 }
+
+.alert {
+  text-align: center;
+}
 /* END ERRORS */
 
 /*section navbar*/
@@ -103,7 +107,6 @@ li.active a {
 }
 
 /* END HOME-PAGE */
-
 
 /* Section for login */
 

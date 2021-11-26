@@ -2,7 +2,7 @@
     <div class="banner">
         <h1>Bienvenue sur Donkey Car</h1>
         <?php include(ROOT . '/src/View/parts/_showErrorsForm.php') ?>
-        <form>
+        <form action="/" method="POST">
             <div class="wrapper">
                 <div class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

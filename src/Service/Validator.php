@@ -52,6 +52,18 @@ class Validator
         return self::LENGTH_MINIMAL_PASSWORD <= mb_strlen($str) && mb_strlen($str) <= self::LENGTH_MAXIMAL;
     }
 
+    public static function validateDate(string $date)
+    {
+        $parts = explode('-', $date);
+        $year = intval($parts[0]);
+        $month = intval($parts[1]);
+        $day = intval($parts[2]);
+        if (is_int($year) && is_int($month) && is_int($day)) {
+            return checkdate($month, $day, $year);
+        }
+        return false;
+    }
+
     public static function save_input_data()
     {
         foreach ($_POST as $key => $value) {
