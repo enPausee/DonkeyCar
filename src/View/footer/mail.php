@@ -1,15 +1,21 @@
 <?php
 namespace App\View\footer;
 
-$userFirstName = $_POST['firstname'];
-$userLastName = $_POST['lastname'];
+$adresse = $_POST['adresse'];
 $userMail = $_POST['mail'];
 $sujet = $_POST['sujet'];
 $message = $_POST['message'];
 
-var_dump($_POST);
 if (isset($_POST['personne'])) {
-    echo "merci mme ou mr " . $userLastName . " " . $userFirstName . " de nous avoir écrit au sujet de " . $sujet . ". <br> Votre était le suivant: <br>" . $message . ". <br> Nous vous répondrons dès que possible à votre adresse mail " . $userMail . ".<br> Bonne journée a vous";}
+    $userFirstName = $_POST['firstname'];
+    $userLastName = $_POST['lastname'];
+
+    echo "merci mme ou mr " . $userLastName . " " . $userFirstName . " de nous avoir écrit au sujet de " . $sujet . ". <br> Votre message était le suivant: <br>" . $message . ". <br> Nous vous répondrons dès que possible à votre adresse mail: " . $userMail . " ou par courrier à l'adresse suivante: " . $adresse . ".<br> Bonne journée a vous";}
+
+if (isset($_POST['societe'])) {
+    $raisonSociale = $_POST['raison'];
+
+    echo "Bonjour société " . $raisonSociale . " de nous avoir écrit au sujet de " . $sujet . ". <br> Votre message était le suivant: <br>" . $message . ". <br> Nous vous répondrons dès que possible à votre adresse mail: " . $userMail . " ou par courrier à l'adresse suivante: " . $adresse . ".<br> Bonne journée a vous";}
 
 /*if (isset($_POST['personne'])) {
 $dest = "smectaz57@gmail.com";

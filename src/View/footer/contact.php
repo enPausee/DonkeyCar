@@ -48,6 +48,11 @@ if (isset($_POST['personne'])) {?>
     </div>
     <br>
     <div class="col-9">
+        <label for="adresse" class="col-2">Entrez votre adresse</label>
+        <input type="text" name="adresse" id="adresse" class="col-4">
+    </div>
+    <br>
+    <div class="col-9">
         <label for="sujet" class="col-2">Sujet de votre message</label>
         <input type="text" name="sujet" id="sujet" class="col-4">
     </div>
@@ -71,6 +76,11 @@ if (isset($_POST['personne'])) {?>
     <div class="col-9">
         <label for="mail" class="col-2">Entrez votre email</label>
         <input type="email" name="mail" id="mail" class="col-4">
+    </div>
+    <br>
+    <div class="col-9">
+        <label for="adresse" class="col-2">Entrez votre adresse</label>
+        <input type="text" name="adresse" id="adresse" class="col-4">
     </div>
     <br>
     <div class="col-9">
