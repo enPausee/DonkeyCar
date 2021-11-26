@@ -1,15 +1,5 @@
 <?php
-namespace App\View\footer;
 
-/*$dest = "smectaz57@gmail.com";
-$sujet = "Email de test";
-$corp = "Salut ceci est un email de test envoyer par un script PHP";
-$headers = "From: metal77400@gmail.com";
-if (mail($dest, $sujet, $corp, $headers)) {
-return "Email envoyé avec succès à $dest ...";
-} else {
-return "Échec de l'envoi de l'email...";
-}*/
 if (empty($_POST)) {
     ?>
 <h1><?=$this->h1?></h1>

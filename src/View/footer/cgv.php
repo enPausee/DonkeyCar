@@ -1,5 +1,4 @@
 <?php
-namespace App\View\footer;
 
 ?>
 <h1><?=$this->h1?></h1>
