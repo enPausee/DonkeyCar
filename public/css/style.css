@@ -1,3 +1,4 @@
+/* ERRORS */
 .errors {
   background-color: red;
   color: white;
@@ -18,12 +19,16 @@ div.page_error a {
   bottom: 7rem;
   right: 14rem;
 }
+/* END ERRORS */
 
+/* NAVBAR ACTIVE */
 li.active a {
   background: white;
   color: #000 !important;
 }
+/* END NAVBAR ACTIVE*/
 
+/* HOME-PAGE */
 .home-page .banner {
   background: url(../picture/banner.jpg) 50% 50%;
   background-size: cover;
@@ -71,3 +76,15 @@ li.active a {
 .home-page .container-one .box {
   padding: 1rem;
 }
+
+.home-page .container .opinion-grp {
+  box-shadow: 6px 6px 2px 1px rgba(185, 185, 202, 0.2);
+}
+
+.home-page .opinion {
+  text-align: center;
+}
+.home-page .opinion-firstname {
+  text-align: center;
+}
+/* END HOME-PAGE */
