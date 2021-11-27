@@ -12,6 +12,16 @@ body {
   color: white;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1 !important;
+}
+
 div.page_error img {
   width: 100%;
   height: 100vh;
@@ -275,7 +285,7 @@ li.active a {
     bottom: 100%;
   }
 }
-
+*/
 /*section pour footer*/
 
 footer {
@@ -284,15 +294,10 @@ footer {
     var(--degrade-color-1),
     var(--degrade-color-2)
   );
-
-  position: absolute !important;
+  background: red;
   width: 100%;
-  bottom: 0 !important;
 }
 
-body {
-  position: relative !important;
-}
 footer ul li {
   list-style-type: none;
   margin: 10px;
@@ -438,7 +443,7 @@ div p a {
   background: #55a0a8;
   color: var(--light-blue);
 }
-
+*/
 /* LISTE DES VEHICULES*/
 .list-vehicle .filters {
   padding: 1rem;
