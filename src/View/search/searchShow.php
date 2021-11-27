@@ -1,6 +1,3 @@
-<p>htdgrebetjgjtj</p>
-
-
 <?php
 echo "
 <pre>";

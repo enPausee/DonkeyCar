@@ -104,7 +104,6 @@ li.active a {
 
 /* END HOME-PAGE */
 
-
 /* Section for login */
 
 .login-box {
@@ -265,6 +264,50 @@ li.active a {
   100% {
     bottom: 100%;
   }
+}
+
+/*section pour footer*/
+
+footer {
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
+
+  position: absolute !important;
+  width: 100%;
+  bottom: 0 !important;
+}
+
+body {
+  position: relative !important;
+}
+footer ul li {
+  list-style-type: none;
+  margin: 10px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: #aeb89f;
+}
+
+footer ul li.active a {
+  background: white;
+  color: #000 !important;
+}
+
+footer ul {
+  padding-left: 10%;
+}
+
+/*style pour faq*/
+
+section ul li a {
+  color: black;
+}
+div p a {
+  color: black;
 }
 
 /* Section for register */
