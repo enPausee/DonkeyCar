@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
 :root {
   --degrade-color-1: #267486; /* première couleur de dégradé */
   --degrade-color-2: #5faab0; /* deuxième couleur de dégradé */
   --light-blue: #03e9f4; /* couleur bleu clair du button submit login*/
 }
-
+body {
+  font-family: "Poppins", sans-serif;
+}
 .errors {
   background-color: red;
   color: white;
@@ -27,6 +30,13 @@ div.page_error a {
 /* END ERRORS */
 
 /*section navbar*/
+nav {
+  height: 100px;
+}
+nav li a.navbar-brand,
+nav li a {
+  font-size: 1.2rem !important;
+}
 
 li.active a {
   background: white;
@@ -427,4 +437,110 @@ div p a {
   border: none;
   background: #55a0a8;
   color: var(--light-blue);
+}
+
+/* LISTE DES VEHICULES*/
+.list-vehicle .filters {
+  padding: 1rem;
+}
+.list-vehicle h1 {
+  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.list-vehicle table th,
+.list-vehicle table td {
+  text-align: center;
+}
+
+.list-vehicle table td {
+  vertical-align: middle;
+}
+
+.list-vehicle .container div.vehicle {
+  position: relative;
+  box-shadow: 2px 2px #888888;
+  margin-bottom: 1rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem;
+  text-decoration: none;
+}
+.list-vehicle .container div.vehicle .image {
+  overflow: hidden;
+  display: block;
+}
+
+.list-vehicle .container div.vehicle .image img {
+  transition-property: transform;
+  transition-duration: 0.8s;
+  margin: 0 auto;
+  display: block;
+}
+
+.list-vehicle .container div.vehicle .image:hover img {
+  transform: scale(1.2);
+}
+
+.list-vehicle .container div.vehicle .daily_price {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border: 1px solid dark;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
+}
+
+.list-vehicle .container .vehicle .description {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.list-vehicle .container div.filters {
+  border: 1px solid #4d99a3;
+  box-shadow: 2px 2px #888888;
+  border-radius: 5px;
+}
+
+.list-vehicle .filters .category {
+  border: 1px solid #4d99a3;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  width: auto;
+  margin-right: 0.5rem;
+  height: max-content;
+}
+
+.list-vehicle .filters .category a {
+  text-decoration: none;
+  color: #4d99a3;
+}
+
+.list-vehicle .filters .category:hover {
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--degrade-color-1),
+    var(--degrade-color-2)
+  );
+}
+
+.list-vehicle .filters .category a:hover {
+  color: white;
+}
+
+.list-vehicle .freePlace .min,
+.list-vehicle .freePlace .max {
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 1px solid #4d99a3;
+  font-weight: bolder;
 }

@@ -71,7 +71,6 @@ $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_licens
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,14,11,1,80,null,"bmwx5.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,15,1,1,80,null,"bmwserie5.jpg")');
 
-
 echo "VEHICLE. Databases Filled";
 
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
