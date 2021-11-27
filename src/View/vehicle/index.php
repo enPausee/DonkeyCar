@@ -25,8 +25,12 @@
             <hr>
             <div class="price">
               <div class="container">
-                <label for="customRange1" class="form-label">Prix journalier</label>
-                <input type="range" class="form-range" min="0" max="25" id="customRange1">
+                <label for="daily_price" class="form-label">Prix journalier</label>
+                <div class="container_daily_price">
+                  <span class="min_daily_price">8</span>
+                  <input type="range" class="form-range" min="0" max="25" name="daily_price" id="daily_price">
+                  <span class="max_daily_price">88</span>
+                </div>
               </div>
             </div>
             <hr>

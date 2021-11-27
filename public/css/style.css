@@ -493,6 +493,24 @@ li.active a {
   color: white;
 }
 
+.list-vehicle .container_daily_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-vehicle .container_daily_price span {
+  font-size: 0.9rem;
+}
+
+.list-vehicle .container_daily_price span:nth-child(1) {
+  margin-right: 0.5rem;
+}
+
+.list-vehicle .container_daily_price input {
+  margin-right: 0.5rem;
+}
+
 .list-vehicle .freePlace .min,
 .list-vehicle .freePlace .max {
   border-radius: 50%;
