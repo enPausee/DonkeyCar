@@ -27,9 +27,9 @@
               <div class="container">
                 <label for="daily_price" class="form-label">Prix journalier</label>
                 <div class="container_daily_price">
-                  <span class="min_daily_price">8</span>
-                  <input type="range" class="form-range" min="0" max="25" name="daily_price" id="daily_price">
-                  <span class="max_daily_price">88</span>
+                  <span class="min_daily_price"><?= $min_daily_price ?></span>
+                  <input type="range" class="form-range" min="<?= $min_daily_price ?>" max="<?= $max_daily_price ?>" name="daily_price" id="daily_price">
+                  <span class="max_daily_price"><?= $max_daily_price ?></span>
                 </div>
               </div>
             </div>

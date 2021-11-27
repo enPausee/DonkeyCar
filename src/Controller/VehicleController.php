@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\CategoryModel;
 use App\Model\VehicleModel;
+use App\Service\DataBase;
 
 class VehicleController extends Controller
 {
@@ -19,8 +20,9 @@ class VehicleController extends Controller
 
     $modelCategory = new CategoryModel;
     $categories  = $modelCategory->findAll();
-
-    $this->render('vehicle/index', compact('vehicles', 'categories'));
+    $min_daily_price = DataBase::getMinDaily_Price();
+    $max_daily_price = DataBase::getMaxDaily_Price();
+    $this->render('vehicle/index', compact('vehicles', 'categories', 'min_daily_price', 'max_daily_price'));
   }
 
   public function ajax()

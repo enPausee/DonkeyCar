@@ -71,4 +71,12 @@ $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_licens
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,14,11,1,80,null,"bmwx5.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,15,1,1,80,null,"bmwserie5.jpg")');
 
-echo "VEHICLE. Databases Filled";
+echo "VEHICLE, ";
+
+//EXTRA
+$pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("siège bébé",15)');
+$pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("gps",30)');
+$pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("climatisation",20)');
+$pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("porte-vélos",25)');
+
+echo "EXTRA. Databases Filled";
