@@ -40,11 +40,12 @@ class VehicleController extends Controller
     // Entêtes autorisées
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-    http_response_code(200);
     if (!empty($_POST)) {
+      http_response_code(200);
       echo json_encode(["message" => $_POST, "success" => true]);
     } else {
-      echo json_encode(["message" => "", "success" => false]);
+      http_response_code(404);
+      echo json_encode(["message" => "Un probleme est survenu", "success" => false]);
     }
   }
 }
