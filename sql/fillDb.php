@@ -72,3 +72,7 @@ $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_licens
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (5,15,1,1,80,null,"bmwserie5.jpg")');
 
 echo "VEHICLE. Databases Filled";
+
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2012-11-26 18:35:00', 100, 1, 1)");
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 1");

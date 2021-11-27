@@ -7,7 +7,6 @@ use App\Model\VehicleModel;
 
 class VehicleController extends Controller
 {
-
   public function index()
   {
     $this->title .= ' - vehicle';
@@ -46,5 +45,6 @@ class VehicleController extends Controller
     } else {
       echo json_encode(["message" => "", "success" => false]);
     }
+
   }
 }
