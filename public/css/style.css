@@ -293,8 +293,7 @@ footer {
     90deg,
     var(--degrade-color-1),
     var(--degrade-color-2)
-  ) !important;
-
+  );
   width: 100%;
 }
 
@@ -308,6 +307,7 @@ footer ul li a {
 }
 
 footer ul li.active a {
+  background: white;
   color: #000 !important;
 }
 

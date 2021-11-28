@@ -51,9 +51,10 @@ if (isset($_POST['personne'])) {?>
     </div>
     <br>
     <button type="submit" name="personne" value="oui">envoyer le message</button>
-
-    <br>
 </form>
+<br>
+<br>
+<br>
 
 <?php } elseif (isset($_POST['societe'])) {?>
 <h1>Formulaire de contact</h1>
