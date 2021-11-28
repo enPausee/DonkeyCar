@@ -13,8 +13,17 @@ if (empty($_POST)) {
         <button type="submit" name="societe" value="oui" class="col-5">une société</button>
         <button type="submit" name="personne" value="oui" class="col-5">une personne</button>
     </div>
-</form>
+    <<<<<<< HEAD </form>
 
+        =======
+</form>
+<div>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+</div>
+>>>>>>> 130a715345a28f0f42b567f9b01eab4e7ef6aefa
 <?php }
 if (isset($_POST['personne'])) {?>
 <h1>Formulaire de contact</h1>
