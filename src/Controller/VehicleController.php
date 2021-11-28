@@ -56,7 +56,12 @@ class VehicleController extends Controller
 
     if (!empty($_POST)) {
       try {
-        $vehicles = DataBase::searchVehicle($_POST['category_list'], $_POST['daily_price'], $_POST['brand'], $_POST['model']);
+        if (!isset($_POST['category_list']) || (isset($_POST['category_list']) && count($_POST['category_list']) == 0)) {
+          $arrayCategory = [];
+        } else {
+          $arrayCategory = $_POST['category_list'];
+        }
+        $vehicles = DataBase::searchVehicle($arrayCategory, $_POST['daily_price'], $_POST['brand'], $_POST['model']);
         http_response_code(200);
       } catch (PDOException $e) {
         die(var_dump($e->getMessage()));
