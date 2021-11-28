@@ -339,7 +339,6 @@ div p a {
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  z-index: -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -366,7 +365,7 @@ div p a {
 .register-birthday {
   justify-self: center;
   grid-area: register-birthday;
-  width: 70%;
+  width: 317px;
 }
 .register-phone {
   justify-self: center;
