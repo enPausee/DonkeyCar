@@ -285,7 +285,7 @@ li.active a {
     bottom: 100%;
   }
 }
-*/
+
 /*section pour footer*/
 
 footer {
@@ -293,8 +293,8 @@ footer {
     90deg,
     var(--degrade-color-1),
     var(--degrade-color-2)
-  );
-  background: red;
+  ) !important;
+
   width: 100%;
 }
 
@@ -308,7 +308,6 @@ footer ul li a {
 }
 
 footer ul li.active a {
-  background: white;
   color: #000 !important;
 }
 
