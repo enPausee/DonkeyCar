@@ -9,21 +9,24 @@
     vertical-align: middle;
   }
 </style>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Photo</th>
-      <th scope="col">Date de réservation</th>
-      <th scope="col">Nom du véhicule</th>
-      <th scope="col">Date de début</th>
-      <th scope="col">Date de fin</th>
-      <th scope="col">Catégorie</th>
-      <th scope="col">Prix</th>
-    </tr>
-  </thead>
-  <tbody class>
-    <?php
-    if (count($orders) !== 0) :
+
+<?php if (empty($orders)) : ?>
+  <p>Vous n'avez aucune réservation.</p>
+<?php else : ?>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">Date de réservation</th>
+        <th scope="col">Nom du véhicule</th>
+        <th scope="col">Date de début</th>
+        <th scope="col">Date de fin</th>
+        <th scope="col">Catégorie</th>
+        <th scope="col">Prix</th>
+      </tr>
+    </thead>
+    <tbody class>
+      <?php
       foreach ($orders as $order) : ?>
         <tr>
           <th scope="row">
@@ -36,11 +39,7 @@
           <td><?php echo $order->category ?></td>
           <td><?php echo $order->price ?>€</td>
         </tr>
-      <?php endforeach;
-    else : ?>
-      <tr>
-        <td colspand="6">Vous n'avez pas de réservation</td>
-      </tr>
-    <?php endif ?>
-  </tbody>
-</table>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+<?php endif ?>
