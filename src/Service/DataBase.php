@@ -11,7 +11,7 @@ class DataBase
   public static function createUser(string $firstName, $lastName, $email, $password, $phone, $birthDate)
   {
   }
-
+  
   public static function is_already_use($field, $value, $table)
   {
     $db = Db::getInstance();
@@ -71,5 +71,6 @@ class DataBase
     }
     $stmt->execute();
     return $stmt->fetchAll();
+
   }
 }
