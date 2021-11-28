@@ -1,10 +1,10 @@
 <?php
 
 ?>
-<h1><?=$this->h1?></h1>
+<h1><?= $this->h1 ?></h1>
 
 <div class="container">
-    <pre>CONDITIONS GÉNÉRALES
+  <pre>CONDITIONS GÉNÉRALES
 
         Les présentes conditions générales régissent l’utilisation de ce site DonkeyCar.
         Ce site appartient et est géré par DonkeyCar

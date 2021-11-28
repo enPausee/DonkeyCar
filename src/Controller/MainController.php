@@ -6,8 +6,8 @@ use App\Service\Validator;
 
 class MainController extends Controller
 {
-    public function index()
-    {
-        $this->render('main/index', []);
-    }
+  public function index()
+  {
+    $this->render('main/index', []);
+  }
 }

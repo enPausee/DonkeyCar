@@ -45,6 +45,5 @@ class VehicleController extends Controller
     } else {
       echo json_encode(["message" => "", "success" => false]);
     }
-
   }
 }
