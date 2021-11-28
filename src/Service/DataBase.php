@@ -55,9 +55,12 @@ class DataBase
       $sql .= " AND brand_id = :brand_id ";
     }
 
-
     if ($model_id != 0) {
       $sql .= " AND model_id = :model_id";
+    }
+
+    if (count($categoryList)) {
+      $sql .= " AND c.id IN (" . implode(',', $categoryList) . ")";
     }
 
     $stmt = $db->prepare($sql);

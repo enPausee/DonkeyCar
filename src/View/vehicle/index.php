@@ -62,7 +62,7 @@
                             <input type="submit" id="js-apply" class="btn btn-secondary" value="Appliquer" />
                         </div>
                     </form>
-                </div>
+              </div>
             </div>
             <div class="col-md-9">
                 <div class="container">

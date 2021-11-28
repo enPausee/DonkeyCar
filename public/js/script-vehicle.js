@@ -1,11 +1,12 @@
-/*
-let categories = document.querySelectorAll('.type input[type="checkbox"]');
-console.log(categories);
-*/
 "use strict";
 
 window.onload = () => {
   console.log("javascript : ok");
+
+  //show current value of daily_price
+  showVal(document.getElementById("daily_price").value);
+
+  // send & return response from server
   ajaxTraitement();
 };
 
@@ -22,7 +23,7 @@ const ajaxTraitement = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
         if (xhr.response) {
           const json = JSON.parse(xhr.response);
-          console.log(json.post);
+          //console.log(json.post);
           const vehicles = json.vehicles;
           const template = merge(vehicles);
           showTempate(template);
@@ -35,12 +36,12 @@ const ajaxTraitement = () => {
     };
 
     xhr.open("POST", "/vehicle/ajax", true);
-    console.log("data", data);
     xhr.send(data);
     return false;
   });
 };
 
+// merge template and object vehicles
 const merge = (vehicles) => {
   let template = "";
   let cptVehicles = 1;
@@ -97,7 +98,14 @@ const merge = (vehicles) => {
   return template;
 };
 
+// Update UI
 const showTempate = (template) => {
   const partsToChange = document.getElementById("js-vehicle");
   partsToChange.innerHTML = template;
+};
+
+//show current value of daily_price
+const showVal = (value) => {
+  let current_daily_price = document.getElementById("js-current-daily-price");
+  current_daily_price.innerHTML = value;
 };

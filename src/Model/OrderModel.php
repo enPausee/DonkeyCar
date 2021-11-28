@@ -16,8 +16,11 @@ class OrderModel extends ModelBase
 
   public function getAllProperties()
   {
-    return $this->myQuery(
-      "
+    if (!isset($_SESSION['user']['id'])) {
+      return [];
+    } else {
+      return $this->myQuery(
+        "
         SELECT o.start_location, o.end_location, o.price, o.created_at, v.image, b.name AS marque, m.name AS model, c.name AS category FROM `{$this->table}` AS o
         LEFT JOIN vehicle AS v ON v.id = o.vehicle_id
         LEFT JOIN brand AS b ON v.brand_id = b.id
@@ -25,7 +28,8 @@ class OrderModel extends ModelBase
         LEFT JOIN category AS c ON v.category_id = c.id
         WHERE o.user_id = {$_SESSION['user']['id']}
         "
-    )->fetchAll();
+      )->fetchAll();
+    }
   }
   /**
    * Get the value of id
