@@ -513,8 +513,5 @@ li.active a {
 
 .list-vehicle .freePlace .min,
 .list-vehicle .freePlace .max {
-  border-radius: 50%;
-  padding: 0.5rem;
-  border: 1px solid #4d99a3;
-  font-weight: bolder;
+  color: #4d99a3;
 }

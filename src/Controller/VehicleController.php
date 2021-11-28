@@ -2,27 +2,37 @@
 
 namespace App\Controller;
 
+use App\Model\BrandModel;
 use App\Model\CategoryModel;
+use App\Model\Model;
 use App\Model\VehicleModel;
 use App\Service\DataBase;
+use PDOException;
 
 class VehicleController extends Controller
 {
-
   public function index()
   {
     $this->title .= ' - vehicle';
     $this->description = "Liste des vehicules";
     $this->h1 = "Nos véhicules";
 
-    $model = new VehicleModel;
-    $vehicles = $model->getAllProperties();
+    $modelVehicle = new VehicleModel;
+    $vehicles = $modelVehicle->getAllProperties();
 
     $modelCategory = new CategoryModel;
     $categories  = $modelCategory->findAll();
+
     $min_daily_price = DataBase::getMinDaily_Price();
     $max_daily_price = DataBase::getMaxDaily_Price();
-    $this->render('vehicle/index', compact('vehicles', 'categories', 'min_daily_price', 'max_daily_price'));
+
+    $modelBrand = new BrandModel;
+    $brands = $modelBrand->findall();
+
+    $model = new Model;
+    $models = $model->findAll();
+
+    $this->render('vehicle/index', compact('vehicles', 'categories', 'min_daily_price', 'max_daily_price', 'brands', 'models'));
   }
 
   public function ajax()
@@ -42,9 +52,17 @@ class VehicleController extends Controller
     // Entêtes autorisées
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+    $vehicles = [];
+
     if (!empty($_POST)) {
-      http_response_code(200);
-      echo json_encode(["message" => $_POST, "success" => true]);
+      try {
+        $vehicles = DataBase::searchVehicle($_POST['category_list'], $_POST['daily_price'], $_POST['brand'], $_POST['model']);
+        http_response_code(200);
+      } catch (PDOException $e) {
+        die(var_dump($e->getMessage()));
+      }
+
+      echo json_encode(["post" => $_POST, "vehicles" => $vehicles, "success" => true]);
     } else {
       http_response_code(404);
       echo json_encode(["message" => "Un probleme est survenu", "success" => false]);
