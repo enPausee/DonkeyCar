@@ -25,10 +25,10 @@
             <hr>
             <div class="price">
               <div class="container">
-                <label for="daily_price" class="form-label">Prix journalier</label>
+                <label for="daily_price" class="form-label">Prix journalier max (<span id="js-current-daily-price">0</span> €)</label>
                 <div class="container_daily_price">
                   <span class="min_daily_price"><?= $min_daily_price ?></span>
-                  <input type="range" class="form-range" min="<?= $min_daily_price ?>" max="<?= $max_daily_price ?>" name="daily_price" id="daily_price">
+                  <input type="range" class="form-range" min="<?= $min_daily_price ?>" max="<?= $max_daily_price ?>" name="daily_price" id="daily_price" oninput="showVal(this.value)" onchange="showVal(this.value)">
                   <span class="max_daily_price"><?= $max_daily_price ?></span>
                 </div>
               </div>
@@ -44,7 +44,7 @@
               </select>
             </div>
             <hr>
-            <div class="gearBox">
+            <div>
               <div class="container">
                 <p>Modèles</p>
                 <select class="form-select" name="model" id="js-model" aria-label="modèle">

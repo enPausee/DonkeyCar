@@ -55,7 +55,6 @@ class DataBase
       $sql .= " AND brand_id = :brand_id ";
     }
 
-
     if ($model_id != 0) {
       $sql .= " AND model_id = :model_id";
     }
