@@ -1,13 +1,13 @@
 <h1><?= $this->h1 ?></h1>
 <style>
-    th,
-    td {
-        text-align: center;
-    }
+  th,
+  td {
+    text-align: center;
+  }
 
-    td {
-        vertical-align: middle;
-    }
+  td {
+    vertical-align: middle;
+  }
 </style>
 <table class="table table-hover">
   <thead>
@@ -29,12 +29,12 @@
           <th scope="row">
             <img src="../picture/vehicle/<?php echo $order->image; ?>" width="200px" height="150px"></img>
           </th>
-          <td><?php echo $order->created_at?></td>
-          <td><?php echo $order->marque . $order->model?></td>
-          <td><?php echo $order->start_location?></td>
-          <td><?php echo $order->end_location?></td>
-          <td><?php echo $order->category?></td>
-          <td><?php echo $order->price?>€</td>
+          <td><?php echo $order->created_at ?></td>
+          <td><?php echo $order->marque . $order->model ?></td>
+          <td><?php echo $order->start_location ?></td>
+          <td><?php echo $order->end_location ?></td>
+          <td><?php echo $order->category ?></td>
+          <td><?php echo $order->price ?>€</td>
         </tr>
       <?php endforeach;
     else : ?>

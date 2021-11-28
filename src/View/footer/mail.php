@@ -6,6 +6,7 @@ $sujet = $_POST['sujet'];
 $message = $_POST['message'];
 
 if (isset($_POST['personne'])) {
+
     $userFirstName = $_POST['firstname'];
     $userLastName = $_POST['lastname'];
     $personneMail = "Bonjour mme ou mr " . $userLastName . " " . $userFirstName . ".
@@ -35,4 +36,8 @@ if (isset($_POST['personne'])) {
     } else {
         echo "Échec de l'envoi de l'email . Nous sommes désolé pour le désagrement.";
     }
-}
+}?>
+
+
+
+
