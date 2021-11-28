@@ -15,10 +15,6 @@ if (empty($_POST)) {
     </div>
 </form>
 
-
-</form>
-
-
 <?php }
 if (isset($_POST['personne'])) {?>
 <h1>Formulaire de contact</h1>
@@ -55,9 +51,9 @@ if (isset($_POST['personne'])) {?>
     </div>
     <br>
     <button type="submit" name="personne" value="oui">envoyer le message</button>
+
     <br>
 </form>
-
 
 <?php } elseif (isset($_POST['societe'])) {?>
 <h1>Formulaire de contact</h1>
