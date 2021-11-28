@@ -13,8 +13,13 @@ if (empty($_POST)) {
       <button type="submit" name="societe" value="oui" class="col-5">une société</button>
       <button type="submit" name="personne" value="oui" class="col-5">une personne</button>
     </div>
-</form>
- 
+  </form>
+  <div>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+  </div>
 <?php }
 if (isset($_POST['personne'])) { ?>
   <h1>Formulaire de contact</h1>
@@ -51,9 +56,10 @@ if (isset($_POST['personne'])) { ?>
     </div>
     <br>
     <button type="submit" name="personne" value="oui">envoyer le message</button>
-
-    <br>
-</form>
+  </form>
+  <br>
+  <br>
+  <br>
 
 <?php } elseif (isset($_POST['societe'])) { ?>
   <h1>Formulaire de contact</h1>
@@ -85,6 +91,10 @@ if (isset($_POST['personne'])) { ?>
     </div>
     <br>
     <button type="submit" name="societe" value="oui">envoyer le message</button>
-</form>
-<?php }?>
-
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<?php } ?>
