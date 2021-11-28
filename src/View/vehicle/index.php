@@ -25,70 +25,46 @@
             <hr>
             <div class="price">
               <div class="container">
-                <label for="customRange1" class="form-label">Prix journalier</label>
-                <input type="range" class="form-range" id="customRange1">
+                <label for="daily_price" class="form-label">Prix journalier</label>
+                <div class="container_daily_price">
+                  <span class="min_daily_price"><?= $min_daily_price ?></span>
+                  <input type="range" class="form-range" min="<?= $min_daily_price ?>" max="<?= $max_daily_price ?>" name="daily_price" id="daily_price">
+                  <span class="max_daily_price"><?= $max_daily_price ?></span>
+                </div>
               </div>
             </div>
             <hr>
-            <div class="freePlace">
-              <div class="container">
-                <p>Nombre de places</p>
-                <span class="min">-</span>
-                1
-                <span class="max">+</span>
-              </div>
+            <div class="container">
+              <p>Marques</p>
+              <select class="form-select" name="brand" id="js-brand" aria-label="marques">
+                <option value="0" selected>Toutes les marques</option>
+                <?php foreach ($brands as $brand) : ?>
+                  <option value="<?= $brand->id ?>"><?= $brand->name ?></option>
+                <?php endforeach ?>
+              </select>
             </div>
             <hr>
             <div class="gearBox">
               <div class="container">
-                <p>Boite de vitesse</p>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Tous
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Boite manuelle
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                  <label class="form-check-label" for="flexRadioDefault3">
-                    Boite automatique
-                  </label>
-                </div>
+                <p>Modèles</p>
+                <select class="form-select" name="model" id="js-model" aria-label="modèle">
+                  <option value="0" selected>Tous les models</option>
+                  <?php foreach ($models as $model) : ?>
+                    <option value="<?= $model->id ?>"><?= $model->name ?></option>
+                  <?php endforeach ?>
+                </select>
               </div>
             </div>
             <hr>
-            <div class="motor">
-              <div class="container">
-                <p>Moteur</p>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Electrique
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Hybride
-                  </label>
-                </div>
-              </div>
-            </div>
             <div class="text-center my-3">
-              <input type="submit" id="js-apply" class="btn btn-outline-secondary" value="Appliquer" />
+              <input type="submit" id="js-apply" class="btn btn-secondary" value="Appliquer" />
             </div>
           </form>
         </div>
       </div>
       <div class="col-md-9">
         <div class="container">
-          <div class="row ">
+          <div class="row" id="js-vehicle">
             <?php
             $cpt = 1;
             $offset = "offset-md-2";
@@ -129,7 +105,6 @@
                   </div>
                 </div>
               </div>
-
             <?php
               $cpt++;
             endforeach;  ?>
