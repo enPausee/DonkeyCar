@@ -60,6 +60,10 @@ class DataBase
       $sql .= " AND model_id = :model_id";
     }
 
+    if (count($categoryList)) {
+      $sql .= " AND c.id IN (" . implode(',', $categoryList) . ")";
+    }
+
     $stmt = $db->prepare($sql);
 
     $stmt->bindValue(':daily_price', $dailyPrice, PDO::PARAM_STR);
