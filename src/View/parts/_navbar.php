@@ -22,14 +22,14 @@ use App\Service\Tools;
             <a class="nav-link" href="/user/profil">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/logout">Logout</a>
+            <a class="nav-link" href="/user/logout">Déconnexion</a>
           </li>
         <?php else : ?>
           <li class="nav-item <?= Tools::setActive("/user/login"); ?>">
-            <a class="nav-link" href="/user/login">Login</a>
+            <a class="nav-link" href="/user/login">Connexion</a>
           </li>
           <li class="nav-item <?= Tools::setActive("/user/register"); ?>">
-            <a class="nav-link" href="/user/register">Register</a>
+            <a class="nav-link" href="/user/register">Inscription</a>
           </li>
         <?php endif; ?>
       </ul>

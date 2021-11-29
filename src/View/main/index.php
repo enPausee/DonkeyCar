@@ -6,18 +6,6 @@
 use App\Model\MainModel;
 
 include ROOT . '/src/View/parts/_showErrorsForm.php'?>
-        <form>
-            <div class="wrapper">
-                <div class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success search" name="search" type="submit">Search</button>
-                </div>
-                <div class="container-datepicker">
-                    <input type="date" name="fromDate" max="" id="fromDate">
-                    <input type="date" name="toDate" min="" id="toDate">
-                </div>
-            </div>
-        </form>
     </div>
     <div class="container container-one">
         <div class="row">
