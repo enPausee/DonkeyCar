@@ -67,7 +67,7 @@ $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_licens
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,6,10,1,20,null,"tipo.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,7,3,1,15,null,"fiatpanda.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,8,3,1,25,null,"fiat500.jpg")');
-$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,9,10,1,35,null,"tipo-2.jpg")');
+$pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (3,9,10,1,20,null,"tipo-2.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (4,10,3,1,45,null,"classe-a.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (4,11,9,1,80,null,"amg-sl.jpg")');
 $pdo->exec('INSERT INTO vehicle(brand_id,model_id,category_id,year_driver_license_needed,daily_price,deleted_at,image) VALUES (4,12,1,1,55,null,"classe-c.jpg")');
@@ -81,9 +81,30 @@ $pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("siège bébé",15)');
 $pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("gps",30)');
 $pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("climatisation",20)');
 $pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("porte-vélos",25)');
+echo "EXTRA, ";
 
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
-$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2012-11-26 18:35:00', 100, 1, 1)");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-22 17:45:12', '2021-11-26 18:35:00', 100, 1, 1)");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 
-echo "EXTRA. Databases Filled";
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2021-12-11 18:35:00', 50, 1, 3)");
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
+
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-27 17:45:12', '2021-11-30 18:35:00', 80, 1, 6)");
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
+
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-09 17:45:12', '2021-11-11 18:35:00', 30, 2, 7)");
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
+
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-28 17:45:12', '2021-11-30 18:35:00', 75, 2, 8)");
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
+
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2021-12-12 18:35:00', 240, 2, 14)");
+$pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
+
+echo "ORDER. Databases Filled";
