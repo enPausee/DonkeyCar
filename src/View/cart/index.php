@@ -56,16 +56,10 @@ use App\Model\VehicleModel;
             </tr>
           <?php } ?>
         </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="5" style="text-align: right;font-weight:bold">
-              TOTAL
-            </td>
-            <td>100€</td>
-            <td>120€</td>
-          </tr>
-        </tfoot>
       </table>
+      <div style="text-align: right;">
+        <a href="/cart/validation" class="btn btn-secondary">Je valide</a>
+      </div>
     </div>
   </div>
 </div>

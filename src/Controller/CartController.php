@@ -4,10 +4,12 @@ namespace App\Controller;
 
 
 use App\Controller\Controller;
+use App\Model\OrderModel;
+use App\Model\UserModel;
+use App\Model\VehicleModel;
 use App\Service\Cart;
 use App\Service\Tools;
 use App\Service\Validator;
-use Exception;
 
 class CartController extends Controller
 {
@@ -41,5 +43,26 @@ class CartController extends Controller
 
 
     $this->render('cart/index', []);
+  }
+
+  public function validation()
+  {
+    die(var_dump($_SESSION['cart']));
+    /**/
+    $model = new VehicleModel;
+    $idVehicle = $_SESSION['cart']['id'][0];
+    $vehicle = $model->find($idVehicle);
+    $vehicle->is_available = 0;
+    $model->update($idVehicle, $vehicle);
+
+    $start = $_SESSION['cart'][$idVehicle]['start'];
+    $end = $_SESSION['cart'][$idVehicle]['end'];
+
+    $order = new OrderModel;
+    $order->setStartLocation($_SESSION['cart'][$idVehicle]['start']);
+    $order->setEndLocation($_SESSION['cart'][$idVehicle]['end']);
+    //  $order->setPrice()
+    //$_SESSION['cart'][$vehicle_id]['extras']
+    die(var_dump($end));
   }
 }
