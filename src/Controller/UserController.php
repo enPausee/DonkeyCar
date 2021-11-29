@@ -135,6 +135,10 @@ class UserController extends Controller
       unset($_SESSION['user']);
     }
 
+    if (isset($_SESSION['cart'])) {
+      unset($_SESSION['cart']);
+    }
+
     Tools::set_flash('Déconnexion effectuée');
 
     //Redirection vers la home page
