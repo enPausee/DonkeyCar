@@ -10,6 +10,7 @@ td {
 }
 </style>
 
+
 <?php if (empty($orders)): ?>
 <p>Vous n'avez aucune réservation.</p>
 <?php else: ?>
@@ -47,7 +48,7 @@ foreach ($orders as $order):
             <td>
                 <form action="annulOrder" method="post">
                     <input type="text" name="id" value="<?php echo $order->id ?>" hidden>
-                    <button type="submit" name="annul" value="oui">annulation</button>
+                    <button type="submit" name="annul" value="oui" class="btn btn-danger">annulation</button>
                 </form>
             </td>
         </tr>
