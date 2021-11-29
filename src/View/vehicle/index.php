@@ -79,7 +79,10 @@
                 <div class="description">
                   <?= $vehicle->marque . ' ' . $vehicle->model ?>
                 </div>
-                <!-- Modal -->
+                <div class="cart">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart<?= $vehicle->id ?>"><i class="fas fa-cart-plus"></i></a>
+                </div>
+                <!-- Modal vehicle-->
                 <div class="modal fade" id="exampleModal<?= $vehicle->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -104,6 +107,75 @@
                     </div>
                   </div>
                 </div>
+                <!-- Modal for Cart-->
+                <div>
+                  <div class="modal fade" id="modalCart<?= $vehicle->id ?>" tabindex="-1" aria-labelledby="modalLabelCart" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalLabelCart">Tunnel d'achat</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ">
+                          <div class="container">
+                            <div class="card">
+                              <div class="container">
+                                <div class="row">
+                                  <img class="image-fluid" src="./picture/vehicle/<?= $vehicle->image ?>" alt="image'<?= $vehicle->model ?>">
+                                </div>
+                                <hr>
+                              </div>
+                              <div class="card-body">
+                                <div class="containerDatepickerVehicle">
+                                  <input type="date" id="js-fromDate<?= $vehicle->id ?>">
+                                  <input type="date" id="js-toDate<?= $vehicle->id ?>">
+                                </div>
+                                <hr>
+                                <h6>Extras</h6>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="form-check">
+                                      <?php foreach ($extras as $extra) : ?>
+                                        <div class="col">
+                                          <input class="form-check-input" type="checkbox" value="<?= $extra->id ?>" name="extra_list[]" id="extra-<?= $extra->id ?>">
+                                          <label class="form-check-label" for="extra-<?= $extra->id ?>">
+                                            <?= strtolower($extra->name) ?>(<?= $extra->daily_price ?> €)
+                                          </label>
+                                        </div>
+                                      <?php endforeach; ?>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                          <a class="btn btn-primary" href="/cart">Je réserve</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- JS for ModalCart -->
+                <?= '<script defer>
+                  $("#js-fromDate<?= $vehicle->id ?>").on("change", function(event) {
+                    fromDate = $(this).val();
+                    console.log(fromDate);
+                    console.log(this.val);
+                    $("#js-toDate<?= $vehicle->id ?>").prop("min", function() {
+                      return fromDate;
+                    });
+                  });
+                  var toDate;
+                  $("#js-toDate<?= $vehicle->id ?>").on("change", function(event) {
+                    toDate = $(this).val();
+                    $("#js-fromDate<?= $vehicle->id ?>").prop("max", function() {
+                      return fromDate;
+                    });
+                  });
+                </script>'; ?>
               </div>
             <?php
               $cpt++;
@@ -112,6 +184,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 <script src="js/script-vehicle.js"></script>

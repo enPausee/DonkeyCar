@@ -501,6 +501,17 @@ div p a {
   );
 }
 
+.list-vehicle .container div.vehicle .cart {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid dark;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: black;
+  font-size: 2.5rem;
+}
+
 .list-vehicle .container .vehicle .description {
   text-transform: capitalize;
   font-size: 1.5rem;
@@ -562,4 +573,11 @@ div p a {
 .list-vehicle .freePlace .min,
 .list-vehicle .freePlace .max {
   color: #4d99a3;
+}
+
+/* CART */
+.page-cart .table th,
+.page-cart .table td {
+  text-align: center;
+  vertical-align: middle;
 }

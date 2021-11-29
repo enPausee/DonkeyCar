@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\BrandModel;
 use App\Model\CategoryModel;
+use App\Model\ExtraModel;
 use App\Model\Model;
 use App\Model\VehicleModel;
 use App\Service\DataBase;
@@ -32,7 +33,10 @@ class VehicleController extends Controller
     $model = new Model;
     $models = $model->findAll();
 
-    $this->render('vehicle/index', compact('vehicles', 'categories', 'min_daily_price', 'max_daily_price', 'brands', 'models'));
+    $modelExtra = new ExtraModel;
+    $extras = $modelExtra->findAll();
+
+    $this->render('vehicle/index', compact('vehicles', 'categories', 'min_daily_price', 'max_daily_price', 'brands', 'models', 'extras'));
   }
 
   public function ajax()
