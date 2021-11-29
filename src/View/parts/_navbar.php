@@ -10,9 +10,6 @@ use App\Service\Tools;
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item <?= Tools::setActive("/"); ?>">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
-        </li>
         <li class="nav-item <?= Tools::setActive("vehicle"); ?>">
           <a class="nav-link" href="/vehicle">Liste des vehicules</a>
         </li>
