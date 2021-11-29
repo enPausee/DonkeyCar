@@ -9,9 +9,11 @@ td {
     vertical-align: middle;
 }
 </style>
+<a href="/order/pendingOrder" class="btn btn-secondary" style="margin-top: 10px;">Voir vos locations en cours</a>
 
+<a href="/order/orderToCome" class="btn btn-primary" style="margin-top: 10px;">Voir vos locations à venir</a>
 <?php if (empty($orders)): ?>
-<p>Vous n'avez aucune réservation.</p>
+<p>Vous n'avez aucune réservation en cours.</p>
 <?php else: ?>
 <table class="table table-hover">
     <thead>
@@ -24,7 +26,6 @@ td {
             <th scope="col">Date de fin</th>
             <th scope="col">Catégorie</th>
             <th scope="col">Prix</th>
-            <th scope="col">annulation</th>
         </tr>
     </thead>
     <tbody>
@@ -44,12 +45,6 @@ foreach ($orders as $order):
             <td><?php echo $order->end_location ?></td>
             <td><?php echo $order->category ?></td>
             <td><?php echo $order->price ?>€</td>
-            <td>
-                <form action="annulOrder" method="post">
-                    <input type="text" name="id" value="<?php echo $order->id ?>" hidden>
-                    <button type="submit" name="annul" value="oui">annulation</button>
-                </form>
-            </td>
         </tr>
         <?php endforeach;?>
         <?php endif?>

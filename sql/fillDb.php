@@ -83,16 +83,17 @@ $pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("climatisation",20)');
 $pdo->exec('INSERT INTO extra(name,daily_price) VALUES ("porte-vélos",25)');
 echo "EXTRA, ";
 
+//order
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
 $pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-22 17:45:12', '2021-11-26 18:35:00', 100, 1, 1)");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
-$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2021-12-11 18:35:00', 50, 1, 3)");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-27 17:45:12', '2021-11-30 18:35:00', 80, 1, 6)");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
-$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-11-27 17:45:12', '2021-11-30 18:35:00', 80, 1, 6)");
+$pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2021-12-11 18:35:00', 50, 1, 3)");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
