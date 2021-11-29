@@ -47,8 +47,7 @@ class CartController extends Controller
 
   public function validation()
   {
-    die(var_dump($_SESSION['cart']));
-    /**/
+
     $model = new VehicleModel;
     $idVehicle = $_SESSION['cart']['id'][0];
     $vehicle = $model->find($idVehicle);
@@ -61,8 +60,15 @@ class CartController extends Controller
     $order = new OrderModel;
     $order->setStartLocation($_SESSION['cart'][$idVehicle]['start']);
     $order->setEndLocation($_SESSION['cart'][$idVehicle]['end']);
-    //  $order->setPrice()
-    //$_SESSION['cart'][$vehicle_id]['extras']
-    die(var_dump($end));
+    $total = 0;
+    foreach ($_SESSION['cart'][$idVehicle]['extras'] as $price) {
+      $total += $price;
+    }
+    $order->setPrice($total);
+    $order->create();
+    Tools::set_flash("Votre commande a été validée", 'success');
+
+    //Redirection vers la home page
+    Tools::redirect('order/orderToCome');
   }
 }
