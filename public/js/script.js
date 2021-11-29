@@ -1,18 +1,15 @@
-$(document).ready(function () {
-  var fromDate;
-  $("#fromDate").on("change", function (event) {
-    fromDate = $(this).val();
-    console.log(fromDate);
-    console.log(this.val);
-    $("#toDate").prop("min", function () {
-      return fromDate;
+window.onload = () => {
+  const debut = document.getElementById("fromDate");
+  const fin = document.getElementById("toDate");
+  if (debut && fin) {
+    //console.log("debut:", debut);
+    //console.log("fin:", fin);
+
+    debut.addEventListener("change", (e) => {
+      fin.setAttribute("min", debut.value);
     });
-  });
-  var toDate;
-  $("#toDate").on("change", function (event) {
-    toDate = $(this).val();
-    $("#fromDate").prop("max", function () {
-      return fromDate;
+    fin.addEventListener("change", (e) => {
+      debut.setAttribute("max", fin.value);
     });
-  });
-});
+  }
+};

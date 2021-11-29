@@ -158,24 +158,18 @@
                     </div>
                   </div>
                 </div>
-                <!-- JS for ModalCart -->
-                <?= '<script defer>
-                  $("#js-fromDate<?= $vehicle->id ?>").on("change", function(event) {
-                    fromDate = $(this).val();
-                    console.log(fromDate);
-                    console.log(this.val);
-                    $("#js-toDate<?= $vehicle->id ?>").prop("min", function() {
-                      return fromDate;
-                    });
+                <!-- JS for ModalCart Datepicker-->
+                <script>
+                  let debut<?= $vehicle->id ?> = document.getElementById("js-fromDate<?= $vehicle->id ?>");
+                  let fin<?= $vehicle->id ?> = document.getElementById("js-toDate<?= $vehicle->id ?>");
+                  debut<?= $vehicle->id ?>.addEventListener("change", (e) => {
+                    fin<?= $vehicle->id ?>.setAttribute("min", debut<?= $vehicle->id ?>.value);
                   });
-                  var toDate;
-                  $("#js-toDate<?= $vehicle->id ?>").on("change", function(event) {
-                    toDate = $(this).val();
-                    $("#js-fromDate<?= $vehicle->id ?>").prop("max", function() {
-                      return fromDate;
-                    });
+                  fin<?= $vehicle->id ?>.addEventListener("change", (e) => {
+                    debut<?= $vehicle->id ?>.setAttribute("max", fin<?= $vehicle->id ?>.value);
                   });
-                </script>'; ?>
+                </script>
+
               </div>
             <?php
               $cpt++;
