@@ -166,13 +166,18 @@
                   let debut<?= $vehicle->id ?> = document.getElementById("js-fromDate<?= $vehicle->id ?>");
                   let fin<?= $vehicle->id ?> = document.getElementById("js-toDate<?= $vehicle->id ?>");
                   debut<?= $vehicle->id ?>.addEventListener("change", (e) => {
-                    fin<?= $vehicle->id ?>.setAttribute("min", debut<?= $vehicle->id ?>.value);
+                    //if debut value is lower than the current date value give an alert saying that the date is not valid
+                    if (new Date(debut<?= $vehicle->id ?>.value) < new Date()) {
+                      alert("La date de début doit être supérieure à la date d'aujourd'hui");
+                      //reset the value of the date
+                      debut<?= $vehicle->id ?>.value = "";
+                    }
+                    fin<?= $vehicle->id ?>.min = e.target.value;
                   });
                   fin<?= $vehicle->id ?>.addEventListener("change", (e) => {
-                    debut<?= $vehicle->id ?>.setAttribute("max", fin<?= $vehicle->id ?>.value);
+                    debut<?= $vehicle->id ?>.max = e.target.value;
                   });
                 </script>
-
               </div>
             <?php
               $cpt++;
@@ -181,7 +186,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 <script src="js/script-vehicle.js"></script>
