@@ -1,11 +1,14 @@
 <div class="home-page">
     <div class="banner">
         <h1>Bienvenue sur Donkey Car</h1>
-        <?php include ROOT . '/src/View/parts/_showErrorsForm.php'?>
+        <?php
+
+use App\Model\MainModel;
+
+include ROOT . '/src/View/parts/_showErrorsForm.php'?>
         <form>
             <div class="wrapper">
                 <div class="d-flex">
-
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success search" name="search" type="submit">Search</button>
                 </div>
@@ -19,7 +22,7 @@
     <div class="container container-one">
         <div class="row">
             <div class="col-md-4 box">
-                <img class="img-fluid" src="https://via.placeholder.com/468x200" alt="">
+                <img class="img-fluid" src="./picture/asset/article-1.jpg" alt="">
                 <div class="card__description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus iste esse nihil dolorum illo
                     numquam error, dolores, officiis corporis voluptatum accusantium et excepturi, eaque laboriosam
@@ -27,7 +30,7 @@
                 </div>
             </div>
             <div class="col-md-4 box">
-                <img class="img-fluid" src="https://via.placeholder.com/468x200" alt="">
+                <img class="img-fluid" src="./picture/asset/article-2.jpg" alt="">
                 <div class="card__description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus iste esse nihil dolorum illo
                     numquam error, dolores, officiis corporis voluptatum accusantium et excepturi, eaque laboriosam
@@ -35,7 +38,7 @@
                 </div>
             </div>
             <div class="col-md-4 box">
-                <img class="img-fluid" src="https://via.placeholder.com/468x200" alt="">
+                <img class="img-fluid" src="./picture/asset/article-3.jpg" alt="">
                 <div class="card__description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus iste esse nihil dolorum illo
                     numquam error, dolores, officiis corporis voluptatum accusantium et excepturi, eaque laboriosam
@@ -49,7 +52,7 @@
         <h2>Lorem ipsum dolor sit amet consectetur</h2>
         <div class="row">
             <div class="col-md-6">
-                <img class="img-fluid" src="https://via.placeholder.com/468x200" alt="">
+                <img src="./picture/asset/map_fr.webp" alt="" width="85%" height="288px">
             </div>
             <div class="col-md-6">
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
@@ -74,15 +77,15 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="height: 864px;">
                 <div class="carousel-item active">
-                    <img src="picture/bugatti-electric.png" class="d-block w-100" alt="...">
+                    <img src="<?php echo MainModel::getRandomPicture() ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="picture/chiron.png" class="d-block w-100" alt="...">
+                    <img src="<?php echo MainModel::getRandomPicture() ?>" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="picture/mansory-bugatti-chiron.png" class="d-block w-100" alt="...">
+                    <img src="<?php echo MainModel::getRandomPicture() ?>" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"

@@ -13,18 +13,6 @@ use App\Service\Tools;
         <li class="nav-item <?= Tools::setActive("/"); ?>">
           <a class="nav-link" aria-current="page" href="/">Home</a>
         </li>
-        <li class="nav-item <?= Tools::setActive("search"); ?>">
-          <a class="nav-link" href="/search">Recherche</a>
-        </li>
-        <li class="nav-item <?= Tools::setActive("brand"); ?>">
-          <a class="nav-link" href="/brand">Liste des marques</a>
-        </li>
-        <li class="nav-item <?= Tools::setActive("category"); ?>">
-          <a class="nav-link" href="/category">Liste des catégories</a>
-        </li>
-        <li class="nav-item <?= Tools::setActive("model"); ?>">
-          <a class="nav-link" href="/model">Liste des models</a>
-        </li>
         <li class="nav-item <?= Tools::setActive("vehicle"); ?>">
           <a class="nav-link" href="/vehicle">Liste des vehicules</a>
         </li>
