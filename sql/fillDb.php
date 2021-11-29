@@ -108,4 +108,12 @@ $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
 $pdo->exec("INSERT INTO `order` (start_location, end_location, price, user_id, vehicle_id) VALUES ('2021-12-09 17:45:12', '2021-12-12 18:35:00', 240, 2, 14)");
 $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
 
-echo "ORDER. Databases Filled";
+echo "ORDER, ";
+
+//user
+$pdo->exec('INSERT INTO user(first_name,last_name,phone,email,password,role,birth_date) VALUES ("nicolas", "schwachtgen", "0608470186", "smectaz57@gmail.com", "$2y$10$dAjwolGyJhKDIBkGj0nzN.yV1E42LltYLHVwvcCglxeuF/SSWXtM2", "ADMIN", "2021-11-16")');
+
+$pdo->exec('INSERT INTO user(first_name,last_name,phone,email,password,role,birth_date) VALUES ("vincent", "schwachtgen", "0605252524", "metal77400@aol.com", "$2y$10$dAjwolGyJhKDIBkGj0nzN.yV1E42LltYLHVwvcCglxeuF/SSWXtM2", "USER", "2021-11-02")');
+
+$pdo->exec('INSERT INTO user(first_name,last_name,phone,email,password,role,birth_date) VALUES ("alain", "schwachtgen", "0650184542", "metal77400@gmail.com", "$2y$10$dAjwolGyJhKDIBkGj0nzN.yV1E42LltYLHVwvcCglxeuF/SSWXtM2", "USER", "2021-11-16")');
+echo "USER. Databases Filled";
