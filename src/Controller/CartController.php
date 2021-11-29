@@ -25,7 +25,7 @@ class CartController extends Controller
       } else {
         $vehicle_id = Validator::test_input($_POST['vehicle_id']);
         $fromDate = Validator::test_input($_POST['fromDate']);
-        $toDate = Validator::test_input($_POST['fromDate']);
+        $toDate = Validator::test_input($_POST['toDate']);
 
         $cart = new Cart;
 

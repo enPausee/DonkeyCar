@@ -34,6 +34,19 @@ class VehicleModel extends ModelBase
     )->fetchAll();
   }
 
+  public function getAllPropertiesById(int $id)
+  {
+    return $this->myQuery(
+      "
+        SELECT v.id, v.year_driver_license_needed, v.daily_price, v.image,v.created_at, v.is_available, b.name AS marque,m.name AS model,c.name AS category FROM {$this->table} AS v
+        LEFT JOIN brand AS b ON v.brand_id=b.id
+        LEFT JOIN model AS m ON v.model_id=m.id
+        LEFT JOIN category AS c ON v.category_id=c.id
+        WHERE v.id = ?",
+      [$id]
+    )->fetch();
+  }
+
   /**
    * Get the value of id
    */
