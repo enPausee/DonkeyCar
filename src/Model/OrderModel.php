@@ -26,7 +26,7 @@ class OrderModel extends ModelBase
         LEFT JOIN brand AS b ON v.brand_id = b.id
         LEFT JOIN model AS m ON v.model_id = m.id
         LEFT JOIN category AS c ON v.category_id = c.id
-WHERE  start_location < CURRENT_DATE AND end_location > CURRENT_DATE
+WHERE  start_location < CURRENT_DATE AND end_location > CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
         "
             )->fetchAll();
         }
@@ -64,7 +64,7 @@ WHERE  start_location < CURRENT_DATE AND end_location > CURRENT_DATE
         LEFT JOIN brand AS b ON v.brand_id = b.id
         LEFT JOIN model AS m ON v.model_id = m.id
         LEFT JOIN category AS c ON v.category_id = c.id
-WHERE  end_location < CURRENT_DATE
+WHERE  end_location < CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
 
         "
             )->fetchAll();
@@ -83,7 +83,7 @@ WHERE  end_location < CURRENT_DATE
         LEFT JOIN brand AS b ON v.brand_id = b.id
         LEFT JOIN model AS m ON v.model_id = m.id
         LEFT JOIN category AS c ON v.category_id = c.id
-WHERE  start_location > CURRENT_DATE
+WHERE  start_location > CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
 
         "
             )->fetchAll();
