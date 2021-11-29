@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\OrderModel;
+use DateTime;
 
 class OrderController extends Controller
 {
@@ -11,8 +12,11 @@ class OrderController extends Controller
         $this->title .= ' - Order';
         $this->description = "Liste de vos réservation";
         $this->h1 = "Vos réservations";
+        $objetDate = new DateTime();
+        $date = $objetDate->format("Y-m-d");
+
         $orderModel = new OrderModel();
-        $orders = $orderModel->getAllProperties();
+        $orders = $orderModel->oldReservation();
         $this->render('order/print_order', compact('orders'));
     }
 

@@ -52,6 +52,23 @@ class OrderModel extends ModelBase
         }
     }
 
+    public function oldReservation()
+    {
+        if (!isset($_SESSION['user']['id'])) {
+            return [];
+        } else {
+            return $this->myQuery(
+                "
+        SELECT o.id, o.start_location, o.end_location, o.price, o.created_at, v.image, b.name AS marque, m.name AS model, c.name AS category FROM `{$this->table}` AS o
+        LEFT JOIN vehicle AS v ON v.id = o.vehicle_id
+        LEFT JOIN brand AS b ON v.brand_id = b.id
+        LEFT JOIN model AS m ON v.model_id = m.id
+        LEFT JOIN category AS c ON v.category_id = c.id
+WHERE end_location < 2021-11-28
+        "
+            )->fetchAll();
+        }
+    }
     /**
      * Get the value of id
      */

@@ -27,13 +27,12 @@ td {
             <th scope="col">annulation</th>
         </tr>
     </thead>
-    <tbody class>
+    <tbody>
         <?php
 
 foreach ($orders as $order):
-    $objetDate = new DateTime();
-    $date = $objetDate->format("Y-m-d");
-    ?>
+
+?>
         <tr>
             <th scope="row">
                 <img src="../picture/vehicle/<?php echo $order->image; ?>" width="200px" height="150px"></img>
