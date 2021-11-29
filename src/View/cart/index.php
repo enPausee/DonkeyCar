@@ -1,5 +1,9 @@
 <?php
-var_dump($_SESSION['cart']['id']);
+
+use App\Model\ExtraModel;
+use App\Model\VehicleModel;
+
+// var_dump(($_SESSION['cart']));
 
 ?>
 <div class="page-cart">
@@ -19,28 +23,36 @@ var_dump($_SESSION['cart']['id']);
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($_SESSION['cart']['id'] as $vehicule_id) { ?>
+          <?php foreach ($_SESSION['cart']['id'] as $vehicle_id) {
+            $vehicle = (new VehicleModel)->getAllPropertiesById($vehicle_id);
+            $price = 0;
+          ?>
             <tr>
               <th scope="row">
                 <div>
-                  <img src="../../picture/chiron.png" width="200" height="200" alt="vehicle's image">
-                  <p>marque model</p>
+                  <img src="../../picture/vehicle/<?= $vehicle->image ?>" width="200" height="200" alt="vehicle's image">
+                  <p><?= $vehicle->marque ?> <?= $vehicle->model ?></p>
                 </div>
               </th>
-              <td>40 €</td>
-              <td>2020-11-10</td>
-              <td>2020-12-14</td>
+              <td><?php
+                  echo $vehicle->daily_price;
+                  $price += $vehicle->daily_price;
+                  ?> €</td>
+              <td><?= $_SESSION['cart'][$vehicle_id]['start'] ?></td>
+              <td><?= $_SESSION['cart'][$vehicle_id]['end'] ?></td>
               <td>
                 <ul class="list-group">
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">A fourth item</li>
-                  <li class="list-group-item">And a fifth one</li>
+                  <?php foreach ($_SESSION['cart'][$vehicle_id]['extras'] as $extraId) {
+                    $extra = (new ExtraModel())->find($extraId);
+                    $price += $extra->daily_price;
+
+                  ?>
+                    <li class="list-group-item"><?= $extra->name ?> (<?= $extra->daily_price ?>) €</li>
+                  <?php } ?>
                 </ul>
               </td>
-              <td>100€</td>
-              <td>120€</td>
+              <td><?= $price ?></td>
+              <td><?= $price * 1.2 ?></td>
             </tr>
           <?php } ?>
         </tbody>
