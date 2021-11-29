@@ -16,7 +16,7 @@ class OrderController extends Controller
         $date = $objetDate->format("Y-m-d");
 
         $orderModel = new OrderModel();
-        $orders = $orderModel->oldReservation();
+        $orders = $orderModel->getAllProperties();
         $this->render('order/print_order', compact('orders'));
     }
 
