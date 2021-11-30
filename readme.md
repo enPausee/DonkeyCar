@@ -43,7 +43,9 @@ CustomLog $ {APACHE_LOG_DIR} /access.log combined
   b/ run the following commands
   php sql / createDb.php
   php sql / fillDb.php
-5/ At browser level, enter the url of your virtual host
+5/ Type the following command:
+  composer instal
+6/ At browser level, enter the url of your virtual host
   example: http: //donkey-car.wip/
 Contributors:
 Matthias Lagrabe
