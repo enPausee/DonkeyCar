@@ -4,23 +4,23 @@ namespace App\Model;
 
 class OrderModel extends ModelBase
 {
-    protected $id;
-    protected $start_location;
-    protected $end_location;
-    protected $price;
+  protected $id;
+  protected $start_location;
+  protected $end_location;
+  protected $price;
 
-    public function __construct()
-    {
-        $this->table = 'order';
-    }
+  public function __construct()
+  {
+    $this->table = 'order';
+  }
 
-    public function pendingOrder()
-    {
-        if (!isset($_SESSION['user']['id'])) {
-            return [];
-        } else {
-            return $this->myQuery(
-                "
+  public function pendingOrder()
+  {
+    if (!isset($_SESSION['user']['id'])) {
+      return [];
+    } else {
+      return $this->myQuery(
+        "
         SELECT o.id, o.start_location, o.end_location, o.price, o.created_at, v.image, b.name AS marque, m.name AS model, c.name AS category FROM `order` AS o
         LEFT JOIN vehicle AS v ON v.id = o.vehicle_id
         LEFT JOIN brand AS b ON v.brand_id = b.id
@@ -28,37 +28,37 @@ class OrderModel extends ModelBase
         LEFT JOIN category AS c ON v.category_id = c.id
 WHERE  start_location < CURRENT_DATE AND end_location > CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
         "
-            )->fetchAll();
-        }
+      )->fetchAll();
     }
+  }
 
-    public function deleteOrder($id)
-    {
-        if (!isset($_SESSION['user']['id'])) {
-            return [];
-        } else {
+  public function deleteOrder($id)
+  {
+    if (!isset($_SESSION['user']['id'])) {
+      return [];
+    } else {
 
-            //Suppression d'une ligne à l'aide d'une instruction préparée
-            $sql = $this->myQuery(
-                "
+      //Suppression d'une ligne à l'aide d'une instruction préparée
+      $sql = $this->myQuery(
+        "
               DELETE FROM `{$this->table}` WHERE `order`.`id` = $id
               "
-            );
+      );
 
-            //Exécuter notre instruction DELETE
-            $res = $sql->execute();
+      //Exécuter notre instruction DELETE
+      $res = $sql->execute();
 
-            return $res;
-        }
+      return $res;
     }
+  }
 
-    public function oldOrder()
-    {
-        if (!isset($_SESSION['user']['id'])) {
-            return [];
-        } else {
-            return $this->myQuery(
-                "
+  public function oldOrder()
+  {
+    if (!isset($_SESSION['user']['id'])) {
+      return [];
+    } else {
+      return $this->myQuery(
+        "
         SELECT o.id, o.start_location, o.end_location, o.price, o.created_at, v.image, b.name AS marque, m.name AS model, c.name AS category FROM `order` AS o
         LEFT JOIN vehicle AS v ON v.id = o.vehicle_id
         LEFT JOIN brand AS b ON v.brand_id = b.id
@@ -67,17 +67,17 @@ WHERE  start_location < CURRENT_DATE AND end_location > CURRENT_DATE AND o.user_
 WHERE  end_location < CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
 
         "
-            )->fetchAll();
-        }
+      )->fetchAll();
     }
+  }
 
-    public function orderToCome()
-    {
-        if (!isset($_SESSION['user']['id'])) {
-            return [];
-        } else {
-            return $this->myQuery(
-                "
+  public function orderToCome()
+  {
+    if (!isset($_SESSION['user']['id'])) {
+      return [];
+    } else {
+      return $this->myQuery(
+        "
       SELECT o.id, o.start_location, o.end_location, o.price, o.created_at, v.image, b.name AS marque, m.name AS model, c.name AS category FROM `order` AS o
         LEFT JOIN vehicle AS v ON v.id = o.vehicle_id
         LEFT JOIN brand AS b ON v.brand_id = b.id
@@ -86,87 +86,86 @@ WHERE  end_location < CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
 WHERE  start_location > CURRENT_DATE AND o.user_id = {$_SESSION['user']['id']}
 
         "
-            )->fetchAll();
-        }
-
+      )->fetchAll();
     }
-    /**
-     * Get the value of id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+  }
+  /**
+   * Get the value of id
+   */
+  public function getId()
+  {
+    return $this->id;
+  }
 
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
+  /**
+   * Set the value of id
+   *
+   * @return  self
+   */
+  public function setId($id)
+  {
+    $this->id = $id;
 
-        return $this;
-    }
+    return $this;
+  }
 
-    /**
-     * Get the value of start_location
-     */
-    public function getStartLocation()
-    {
-        return $this->start_location;
-    }
+  /**
+   * Get the value of start_location
+   */
+  public function getStartLocation()
+  {
+    return $this->start_location;
+  }
 
-    /**
-     * Set the value of start_location
-     *
-     * @return  self
-     */
-    public function setStartLocation($start_location)
-    {
-        $this->start_location = $start_location;
+  /**
+   * Set the value of start_location
+   *
+   * @return  self
+   */
+  public function setStartLocation($start_location)
+  {
+    $this->start_location = $start_location;
 
-        return $this;
-    }
+    return $this;
+  }
 
-    /**
-     * Get the value of end_location
-     */
-    public function getEndLocation()
-    {
-        return $this->end_location;
-    }
+  /**
+   * Get the value of end_location
+   */
+  public function getEndLocation()
+  {
+    return $this->end_location;
+  }
 
-    /**
-     * Set the value of end_location
-     *
-     * @return  self
-     */
-    public function setEndLocation($end_location)
-    {
-        $this->end_location = $end_location;
+  /**
+   * Set the value of end_location
+   *
+   * @return  self
+   */
+  public function setEndLocation($end_location)
+  {
+    $this->end_location = $end_location;
 
-        return $this;
-    }
+    return $this;
+  }
 
-    /**
-     * Get the value of price
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
+  /**
+   * Get the value of price
+   */
+  public function getPrice()
+  {
+    return $this->price;
+  }
 
-    /**
-     * Set the value of price
-     *
-     * @return  self
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
+  /**
+   * Set the value of price
+   *
+   * @return  self
+   */
+  public function setPrice($price)
+  {
+    $this->price = $price;
 
-        return $this;
-    }
+    return $this;
+  }
 }

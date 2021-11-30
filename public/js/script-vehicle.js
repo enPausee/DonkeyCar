@@ -26,7 +26,7 @@ const ajaxTraitement = () => {
           //console.log(json.post);
           const vehicles = json.vehicles;
           const template = merge(vehicles);
-          showTempate(template);
+         showTempate(template);
         } else {
           console.log("Une erreur est survenue", xhr.response.message);
         }
@@ -58,6 +58,12 @@ const merge = (vehicles) => {
   </a>
   <div class="daily_price">${vehicle.daily_price}<span> €</span></div>
   <div class="description">${vehicle.marque} ${vehicle.model}</div>
+  <?php if (isset($_SESSION['user']['id'])) : ?>
+    <div class="cart">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart"><i class="fas fa-cart-plus"></i></a>
+    </div>
+  <?php endif; ?>
+  <div class="cart"><a href="#" data-bs-toggle="modal" data-bs-target="#modalCart${vehicle.id}"><i class="fas fa-cart-plus"></i></a></div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal${vehicle.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
