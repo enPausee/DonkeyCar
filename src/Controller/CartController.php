@@ -5,7 +5,6 @@ namespace App\Controller;
 
 use App\Controller\Controller;
 use App\Model\OrderModel;
-use App\Model\UserModel;
 use App\Model\VehicleModel;
 use App\Service\Cart;
 use App\Service\Tools;
@@ -66,9 +65,13 @@ class CartController extends Controller
     }
     $order->setPrice($total);
     $order->create();
+
+    //delete cart'user from session
+    unset($_SESSION['cart'][$idVehicle]);
+
     Tools::set_flash("Votre commande a été validée", 'success');
 
     //Redirection vers la home page
-    Tools::redirect('order/orderToCome');
+    Tools::redirect('/order/orderToCome');
   }
 }

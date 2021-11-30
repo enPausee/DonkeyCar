@@ -5,8 +5,8 @@ namespace App\Service;
 class Validator
 {
 
-  const LENGTH_MINIMAL = 3;
-  const LENGTH_MINIMAL_PASSWORD = 8;
+  const LENGTH_MINIMAL = 2;
+  const LENGTH_MINIMAL_PASSWORD = 6;
   const LENGTH_MAXIMAL = 255;
 
   public static function not_empty($fields = [])

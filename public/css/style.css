@@ -10,6 +10,7 @@ body {
 .errors {
   background-color: red;
   color: white;
+  margin-bottom: 0;
 }
 
 .content {
@@ -37,6 +38,11 @@ div.page_error a {
   bottom: 7rem;
   right: 14rem;
 }
+
+.alert {
+  text-align: center;
+}
+
 /* END ERRORS */
 
 /*section navbar*/

@@ -79,9 +79,11 @@
                 <div class="description">
                   <?= $vehicle->marque . ' ' . $vehicle->model ?>
                 </div>
-                <div class="cart">
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart<?= $vehicle->id ?>"><i class="fas fa-cart-plus"></i></a>
-                </div>
+                <?php if (isset($_SESSION['user']['id'])) : ?>
+                  <div class="cart">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart<?= $vehicle->id ?>"><i class="fas fa-cart-plus"></i></a>
+                  </div>
+                <?php endif; ?>
                 <!-- Modal vehicle-->
                 <div class="modal fade" id="exampleModal<?= $vehicle->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -181,11 +183,10 @@
               </div>
             <?php
               $cpt++;
-            endforeach;  ?>
+            endforeach; ?>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script src="js/script-vehicle.js"></script>
