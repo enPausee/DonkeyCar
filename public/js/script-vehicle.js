@@ -2,12 +2,19 @@
 
 window.onload = () => {
   console.log("javascript : ok");
+  // get url for check
+  let hrefCurrent = window.location.href;
+  const words = hrefCurrent.split('/');
+  const size = words.length;
 
-  //show current value of daily_price
-  showVal(document.getElementById("daily_price").value);
+  //only for vehicle-list
+  if(words[size-1] && words[size-1]=='vehicle') {
+    //show current value of daily_price
+    showVal(document.getElementById("daily_price").value);
 
-  // send & return response from server
-  ajaxTraitement();
+    // send & return response from server
+    ajaxTraitement();
+  }
 };
 
 const ajaxTraitement = () => {
@@ -23,10 +30,10 @@ const ajaxTraitement = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
         if (xhr.response) {
           const json = JSON.parse(xhr.response);
-          //console.log(json.post);
+          console.log(json.post.user_connect);
           const vehicles = json.vehicles;
-          const template = merge(vehicles);
-         showTempate(template);
+          const template = merge(vehicles,json.post.user_connect);
+          showTempate(template);
         } else {
           console.log("Une erreur est survenue", xhr.response.message);
         }
@@ -42,7 +49,7 @@ const ajaxTraitement = () => {
 };
 
 // merge template and object vehicles
-const merge = (vehicles) => {
+const merge = (vehicles,userConnected) => {
   let template = "";
   let cptVehicles = 1;
 
@@ -57,15 +64,12 @@ const merge = (vehicles) => {
     <img class="image-fluid" src="./picture/vehicle/${vehicle.image}" width="200" height="200" alt="image'307" />
   </a>
   <div class="daily_price">${vehicle.daily_price}<span> €</span></div>
-  <div class="description">${vehicle.marque} ${vehicle.model}</div>
-  <?php if (isset($_SESSION['user']['id'])) : ?>
-    <div class="cart">
-      <a href="#" data-bs-toggle="modal" data-bs-target="#modalCart"><i class="fas fa-cart-plus"></i></a>
-    </div>
-  <?php endif; ?>
-  <div class="cart"><a href="#" data-bs-toggle="modal" data-bs-target="#modalCart${vehicle.id}"><i class="fas fa-cart-plus"></i></a></div>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal${vehicle.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="description">${vehicle.marque} ${vehicle.model}</div>`;
+  if (userConnected==1) {
+    template += `<div class="cart"><a href="#" data-bs-toggle="modal" data-bs-target="#modalCart${vehicle.id}"><i class="fas fa-cart-plus"></i></a></div>`;
+  }
+
+  template += `<div class="modal fade" id="exampleModal${vehicle.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

@@ -59,6 +59,7 @@
             <div class="text-center my-3">
               <input type="submit" id="js-apply" class="btn btn-secondary" value="Appliquer" />
             </div>
+            <input type="hidden" name="user_connect" value="<?php echo isset($_SESSION['user']['id']);  ?>">
           </form>
         </div>
       </div>
