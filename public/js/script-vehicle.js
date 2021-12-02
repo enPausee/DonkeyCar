@@ -4,11 +4,11 @@ window.onload = () => {
   console.log("javascript : ok");
   // get url for check
   let hrefCurrent = window.location.href;
-  const words = hrefCurrent.split('/');
+  const words = hrefCurrent.split("/");
   const size = words.length;
 
   //only for vehicle-list
-  if(words[size-1] && words[size-1]=='vehicle') {
+  if (words[size - 1] && words[size - 1] == "vehicle") {
     //show current value of daily_price
     showVal(document.getElementById("daily_price").value);
 
@@ -30,9 +30,9 @@ const ajaxTraitement = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
         if (xhr.response) {
           const json = JSON.parse(xhr.response);
-          console.log(json.post.user_connect);
+          //console.log(json);
           const vehicles = json.vehicles;
-          const template = merge(vehicles,json.post.user_connect);
+          const template = merge(vehicles, json.post.user_connect, json.extras);
           showTempate(template);
         } else {
           console.log("Une erreur est survenue", xhr.response.message);
@@ -49,7 +49,7 @@ const ajaxTraitement = () => {
 };
 
 // merge template and object vehicles
-const merge = (vehicles,userConnected) => {
+const merge = (vehicles, user_connect, extras) => {
   let template = "";
   let cptVehicles = 1;
 
@@ -65,11 +65,11 @@ const merge = (vehicles,userConnected) => {
   </a>
   <div class="daily_price">${vehicle.daily_price}<span> €</span></div>
   <div class="description">${vehicle.marque} ${vehicle.model}</div>`;
-  if (userConnected==1) {
-    template += `<div class="cart"><a href="#" data-bs-toggle="modal" data-bs-target="#modalCart${vehicle.id}"><i class="fas fa-cart-plus"></i></a></div>`;
-  }
-
-  template += `<div class="modal fade" id="exampleModal${vehicle.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      if (user_connect == "connected") {
+        template += `<div class="cart"><a href="#" data-bs-toggle="modal" data-bs-target="#modalCart${vehicle.id}"><i class="fas fa-cart-plus"></i></a></div>`;
+      }
+      template += `<!-- Modal -->
+  <div class="modal fade" id="exampleModal${vehicle.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -101,49 +101,57 @@ const merge = (vehicles,userConnected) => {
       </div>
     </div>
   </div>
-</div>
-<div>
-  <div class="modal fade" id="modalCart${vehicle.id}" tabindex="-1" aria-labelledby="modalLabelCart" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="cart" method="POST">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalLabelCart">Tunnel d'achat</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body ">
-            <div class="container">
-              <div class="card">
-                <div class="container">
-                  <div class="row">
-                    <img class="image-fluid" src="./picture/vehicle/${vehicle.image}" alt="image'<?= $vehicle->model ?>">
-                    <input type="hidden" name="vehicle_id" value="${vehicle.id}">
-                  </div>
-                  <hr>
-                </div>
-                <div class="card-body">
-                  <div class="containerDatepickerVehicle">
-                    <input type="date" id="js-fromDate${vehicle.id}" name="fromDate">
-                    <input type="date" id="js-toDate${vehicle.id}" name="toDate">
-                  </div>
-                  <hr>
-                  <h6>Extras</h6>
+  <!-- Modal for Cart-->
+  <div>
+    <div class="modal fade" id="modalCart${vehicle.id}" tabindex="-1" aria-labelledby="modalLabelCart" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="cart" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabelCart">Tunnel d'achat</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+              <div class="container">
+                <div class="card">
                   <div class="container">
                     <div class="row">
-                      <div class="form-check">
-
+                      <img class="image-fluid" src="./picture/vehicle/${vehicle.image}" alt="image'${vehicle.model}">
+                      <input type="hidden" name="vehicle_id" value="${vehicle.id}">
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="card-body">
+                    <div class="containerDatepickerVehicle">
+                      <input type="date" id="js-fromDate${vehicle.id}" name="fromDate">
+                      <input type="date" id="js-toDate${vehicle.id}" name="toDate">
+                    </div>
+                    <hr>
+                    <h6>Extras</h6>
+                    <div class="container">
+                      <div class="row">
+                        <div class="form-check">`;
+      extras.map((extra) => {
+        template += `<div class="col">
+                              <input class="form-check-input" type="checkbox" value="${extra.id}" name="extra_list[]" id="extra-${extra.id}">
+                              <label class="form-check-label" for="extra-${extra.id}">
+                                ${extra.name} ${extra.daily_price}( €)
+                              </label>
+                            </div>`;
+      });
+      template += `</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            <button type="submit" name="submit" class="btn btn-primary">Je réserve</button>
-          </div>
-        </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              <button type="submit" name="submit" class="btn btn-primary">Je réserve</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

@@ -66,12 +66,14 @@ class VehicleController extends Controller
           $arrayCategory = $_POST['category_list'];
         }
         $vehicles = DataBase::searchVehicle($arrayCategory, $_POST['daily_price'], $_POST['brand'], $_POST['model']);
+        $modelExtra = new ExtraModel;
+        $extras = $modelExtra->findAll();
         http_response_code(200);
       } catch (PDOException $e) {
         die(var_dump($e->getMessage()));
       }
 
-      echo json_encode(["post" => $_POST, "vehicles" => $vehicles, "success" => true]);
+      echo json_encode(["post" => $_POST, "vehicles" => $vehicles, "extras" => $extras, "success" => true]);
     } else {
       http_response_code(404);
       echo json_encode(["message" => "Un probleme est survenu", "success" => false]);
