@@ -12,19 +12,20 @@ After cloning or downloading the file, please follow the instructions below
   ###### For linux (https://www.pixel-online.fr/article/208330/comment-ajout-et-supprimer-des-virtuals-hosts-sous-linux/)
     create a virtual host that points to the location defined above (do not forget to specify the / public folder)
     place in etc/apache2/site-available the conf file, example below donkey-car.wip.conf:
-define ROOT "/var/www/html/donkey-car/public"
-define SITE "donkey-car.wip"
-<VirtualHost *: 80>
-DocumentRoot "$ {ROOT}"
-ServerName $ {SITE}
-ServerAlias ​​*. $ {SITE}
-<DIRECTORY "$ {ROOT}">
-AllowOverride All
-Require all granted
-</DIRECTORY>
-ErrorLog $ {APACHE_LOG_DIR} /error.log
-CustomLog $ {APACHE_LOG_DIR} /access.log combined
-</VirtualHost>
+  ######
+    define ROOT "/var/www/html/donkey-car/public"
+    define SITE "donkey-car.wip"
+    <VirtualHost *: 80>
+    DocumentRoot "$ {ROOT}"
+    ServerName $ {SITE}
+    ServerAlias ​​*. $ {SITE}
+    <DIRECTORY "$ {ROOT}">
+    AllowOverride All
+    Require all granted
+    </DIRECTORY>
+    ErrorLog $ {APACHE_LOG_DIR} /error.log
+    CustomLog $ {APACHE_LOG_DIR} /access.log combined
+    </VirtualHost>
 ## Give access
   For the following commands, you must be in super user mode (sudo)
     1- Give all rights (777) to the donkey-car project
@@ -43,8 +44,8 @@ CustomLog $ {APACHE_LOG_DIR} /access.log combined
 ## In order to fill the database tables, we can rely on php scripts
   ###### open a terminal in the donkey-car folder
   ###### run the following commands
-  php sql / createDb.php
-  php sql / fillDb.php
+            php sql / createDb.php
+            php sql / fillDb.php
 ## Type the following command:
   composer instal
 ## At browser level, enter the url of your virtual host
