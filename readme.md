@@ -2,14 +2,14 @@
 Installation of the Donkey-Car project
 After cloning or downloading the file, please follow the instructions below
 ## Location of the project
-  a/ For linux and mac
+  ###### For linux and mac
     Place the project folder in the /var/www/html/
-  b/ For windows
+  ###### For windows
     Follow the instructions of xamp and wamp (see the htdoc file)
 ## Creation of a virtual host
-  a/ For windows
+  ###### For windows
     wamp and xamp allow using a graphical interface to easily create a virtual host
-  b/ For linux (https://www.pixel-online.fr/article/208330/comment-ajout-et-supprimer-des-virtuals-hosts-sous-linux/)
+  ###### For linux (https://www.pixel-online.fr/article/208330/comment-ajout-et-supprimer-des-virtuals-hosts-sous-linux/)
     create a virtual host that points to the location defined above (do not forget to specify the / public folder)
     place in etc/apache2/site-available the conf file, example below donkey-car.wip.conf:
 define ROOT "/var/www/html/donkey-car/public"
@@ -25,6 +25,7 @@ Require all granted
 ErrorLog $ {APACHE_LOG_DIR} /error.log
 CustomLog $ {APACHE_LOG_DIR} /access.log combined
 </VirtualHost>
+## Give access
   For the following commands, you must be in super user mode (sudo)
     1- Give all rights (777) to the donkey-car project
     2- modify /etc/hosts file by adding the following line
@@ -40,8 +41,8 @@ CustomLog $ {APACHE_LOG_DIR} /access.log combined
   const DB_USER = 'XXXXX';
   const DB_PSWD = 'XXXXX';
 ## In order to fill the database tables, we can rely on php scripts
-  a/ open a terminal in the donkey-car folder
-  b/ run the following commands
+  ###### open a terminal in the donkey-car folder
+  ###### run the following commands
   php sql / createDb.php
   php sql / fillDb.php
 ## Type the following command:
