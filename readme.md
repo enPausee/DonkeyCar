@@ -27,7 +27,7 @@ After cloning or downloading the file, please follow the instructions below
     CustomLog $ {APACHE_LOG_DIR} /access.log combined
     </VirtualHost>
 ## Give access
-  For the following commands, you must be in super user mode (sudo)
+  ###### For the following commands, you must be in super user mode (sudo)
     1- Give all rights (777) to the donkey-car project
     2- modify /etc/hosts file by adding the following line
       127.0.0.1 donkey-car.wip
