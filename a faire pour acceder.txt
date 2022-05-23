@@ -1,0 +1,2 @@
+il faut aller a ce fichier
+C:\xampp\apache\conf\extra\httpd-vhosts
